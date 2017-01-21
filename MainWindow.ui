@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>ToDoName</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="1">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLabel" name="usernameLabel">
+            <property name="text">
+             <string>Username</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="passwordLabel">
+            <property name="text">
+             <string>Password</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="emptyLabel">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLineEdit" name="usernameLineEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="passwordLineEdit">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="whatsThis">
+             <string/>
+            </property>
+            <property name="inputMethodHints">
+             <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+            <property name="placeholderText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="enterButton">
+            <property name="text">
+             <string>Enter</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMembers">
+    <property name="title">
+     <string>Members</string>
+    </property>
+    <addaction name="actionAdd_New"/>
+    <addaction name="actionFind"/>
+   </widget>
+   <widget class="QMenu" name="menuLoan">
+    <property name="title">
+     <string>Loan</string>
+    </property>
+    <addaction name="actionNew_Load"/>
+    <addaction name="actionView_Loans"/>
+   </widget>
+   <widget class="QMenu" name="menuTransaction">
+    <property name="title">
+     <string>Transaction</string>
+    </property>
+    <addaction name="actionVoucher"/>
+    <addaction name="actionPay_Slip"/>
+   </widget>
+   <widget class="QMenu" name="menuReport">
+    <property name="title">
+     <string>Report</string>
+    </property>
+    <widget class="QMenu" name="menuAccounts">
+     <property name="title">
+      <string>Accounts</string>
+     </property>
+     <addaction name="actionRecurring_Deposit"/>
+     <addaction name="actionFixed_Deposit"/>
+     <addaction name="actionSavings"/>
+    </widget>
+    <widget class="QMenu" name="menuLoan_2">
+     <property name="title">
+      <string>Loan</string>
+     </property>
+     <addaction name="actionAdvance"/>
+     <addaction name="actionOutstanding"/>
+    </widget>
+    <addaction name="menuAccounts"/>
+    <addaction name="menuLoan_2"/>
+    <addaction name="actionBalance_Sheet"/>
+    <addaction name="actionProfit_and_Loss"/>
+    <addaction name="actionReciept_and_Disbursment"/>
+    <addaction name="actionList_of_Shareholders"/>
+    <addaction name="actionTerm_Deposit_Account"/>
+    <addaction name="actionMisc_2"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuBackup">
+    <property name="title">
+     <string>Backup</string>
+    </property>
+    <addaction name="actionRestoree"/>
+    <addaction name="actionSync"/>
+   </widget>
+   <widget class="QMenu" name="menuExpense">
+    <property name="title">
+     <string>Expense</string>
+    </property>
+    <addaction name="actionNew_Expense"/>
+    <addaction name="actionView_Expense"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionHelp"/>
+    <addaction name="actionSupport"/>
+   </widget>
+   <addaction name="menuMembers"/>
+   <addaction name="menuLoan"/>
+   <addaction name="menuTransaction"/>
+   <addaction name="menuReport"/>
+   <addaction name="menuExpense"/>
+   <addaction name="menuBackup"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAdd_New">
+   <property name="text">
+    <string>Add New</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="text">
+    <string>Find Member</string>
+   </property>
+  </action>
+  <action name="actionNew_Load">
+   <property name="text">
+    <string>New Loan</string>
+   </property>
+  </action>
+  <action name="actionView_Loans">
+   <property name="text">
+    <string>View Loan</string>
+   </property>
+  </action>
+  <action name="actionVoucher">
+   <property name="text">
+    <string>Voucher</string>
+   </property>
+  </action>
+  <action name="actionPay_Slip">
+   <property name="text">
+    <string>Pay Slip</string>
+   </property>
+  </action>
+  <action name="actionBalance_Sheet">
+   <property name="text">
+    <string>Balance Sheet</string>
+   </property>
+  </action>
+  <action name="actionProfit_and_Loss">
+   <property name="text">
+    <string>Profit and Loss</string>
+   </property>
+  </action>
+  <action name="actionReciept_and_Disbursment">
+   <property name="text">
+    <string>Reciept and Disbursment</string>
+   </property>
+  </action>
+  <action name="actionList_of_Shareholders">
+   <property name="text">
+    <string>Shareholders</string>
+   </property>
+  </action>
+  <action name="actionTerm_Deposit_Account">
+   <property name="text">
+    <string>Term Deposit Accounts</string>
+   </property>
+  </action>
+  <action name="actionStationary">
+   <property name="text">
+    <string>Stationary</string>
+   </property>
+  </action>
+  <action name="actionFurniture">
+   <property name="text">
+    <string>Furniture</string>
+   </property>
+  </action>
+  <action name="actionRegister">
+   <property name="text">
+    <string>Register</string>
+   </property>
+  </action>
+  <action name="actionRecurring_Deposit">
+   <property name="text">
+    <string>Recurring Deposit</string>
+   </property>
+  </action>
+  <action name="actionFixed_Deposit">
+   <property name="text">
+    <string>Fixed Deposit</string>
+   </property>
+  </action>
+  <action name="actionSavings">
+   <property name="text">
+    <string>Savings </string>
+   </property>
+  </action>
+  <action name="actionStationary_2">
+   <property name="text">
+    <string>Stationary</string>
+   </property>
+  </action>
+  <action name="actionAdvance">
+   <property name="text">
+    <string>Advanced</string>
+   </property>
+  </action>
+  <action name="actionOutstanding">
+   <property name="text">
+    <string>Outstanding</string>
+   </property>
+  </action>
+  <action name="actionBank">
+   <property name="text">
+    <string>Bank</string>
+   </property>
+  </action>
+  <action name="actionNew_Expense">
+   <property name="text">
+    <string>New Expense</string>
+   </property>
+  </action>
+  <action name="actionView_Expense">
+   <property name="text">
+    <string>View Expense</string>
+   </property>
+  </action>
+  <action name="actionSync">
+   <property name="text">
+    <string>Sync</string>
+   </property>
+  </action>
+  <action name="actionRestoree">
+   <property name="text">
+    <string>Restore</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionSupport">
+   <property name="text">
+    <string>Support</string>
+   </property>
+  </action>
+  <action name="actionMisc_2">
+   <property name="text">
+    <string>Misc</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

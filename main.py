@@ -1,5 +1,13 @@
 from firstdialog import Ui_Form as welcomeForm
 from MainWindow import Ui_MainWindow as mainWindow
+
+# experimental
+# -------------------------------------------------
+from savings import Ui_Form as savingsForm
+from balancesheet import Ui_Form as balancesheetForm
+from recurringdeposit import Ui_Form as recurringdepositForm
+# -------------------------------------------------
+
 import sys
 from PyQt5 import QtWidgets
 
@@ -40,10 +48,48 @@ class CSMSMain(QtWidgets.QMainWindow):
         super().__init__()
         self.ui = mainWindow()
         self.ui.setupUi(self)
-        # A method for exitting application
+
+        # A method for exiting application
         self.ui.menuExit.mouseReleaseEvent = self.exitsafely
 
+        # Open new tabs for all reports
+        self.ui.actionRecurring_Deposit.triggered.connect(self.openRecurring_Deposit)
+        self.ui.actionFixed_Deposit.triggered.connect(self.openBalance_Sheet)
+        self.ui.actionSavings.triggered.connect(self.openSavings)
+        self.ui.actionAdvance.triggered.connect(self.openBalance_Sheet)
+        self.ui.actionOutstanding.triggered.connect(self.openBalance_Sheet)
+        self.ui.actionBalance_Sheet.triggered.connect(self.openBalance_Sheet)
+        self.ui.actionProfit_and_Loss.triggered.connect(self.openBalance_Sheet)
+        self.ui.actionReceipt_and_Disbursment.triggered.connect(self.openBalance_Sheet)
+        self.ui.actionShareholders.triggered.connect(self.openBalance_Sheet)
+        self.ui.actionTerm_Deposit_Account.triggered.connect(self.openBalance_Sheet)
+        self.ui.actionMisc.triggered.connect(self.openBalance_Sheet)
+
+
+        # Close tabs
+        self.ui.tabWidget.tabCloseRequested.connect(self.ui.tabWidget.removeTab)
+
+        
+    def openBalance_Sheet(self,*args):
+        self.tab_balancesheet = QtWidgets.QWidget()
+        self.tab_balancesheet.ui = balancesheetForm()
+        self.tab_balancesheet.ui.setupUi(self.tab_balancesheet)
+        self.ui.tabWidget.addTab(self.tab_balancesheet,"Balance Sheet")
+
+    def openSavings(self,*args):
+        self.tabSavings = QtWidgets.QWidget()
+        self.tabSavings.ui = savingsForm()
+        self.tabSavings.ui.setupUi(self.tabSavings)
+        self.ui.tabWidget.addTab(self.tabSavings,"Savings")
+
+    def openRecurring_Deposit(self,*args):
+        self.tabRecurring_Deposit = QtWidgets.QWidget()
+        self.tabRecurring_Deposit.ui = recurringdepositForm()
+        self.tabRecurring_Deposit.ui.setupUi(self.tabRecurring_Deposit)
+        self.ui.tabWidget.addTab(self.tabRecurring_Deposit,"Recurring Deposit")
+
     def exitsafely(self,*args):
+        # implement a "are you sure dialog box" later
         self.close()
 
 if __name__=='__main__':

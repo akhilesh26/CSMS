@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>638</width>
+    <height>588</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -30,21 +30,14 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>-1</number>
       </property>
       <property name="tabsClosable">
        <bool>true</bool>
       </property>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>Tab 1</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_2">
-       <attribute name="title">
-        <string>Tab 2</string>
-       </attribute>
-      </widget>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
    </layout>
@@ -54,7 +47,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>638</width>
      <height>19</height>
     </rect>
    </property>
@@ -102,10 +95,10 @@
     <addaction name="menuLoan_2"/>
     <addaction name="actionBalance_Sheet"/>
     <addaction name="actionProfit_and_Loss"/>
-    <addaction name="actionReciept_and_Disbursment"/>
-    <addaction name="actionList_of_Shareholders"/>
+    <addaction name="actionReceipt_and_Disbursment"/>
+    <addaction name="actionShareholders"/>
     <addaction name="actionTerm_Deposit_Account"/>
-    <addaction name="actionMisc_2"/>
+    <addaction name="actionMisc"/>
     <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuBackup">
@@ -184,12 +177,12 @@
     <string>Profit and Loss</string>
    </property>
   </action>
-  <action name="actionReciept_and_Disbursment">
+  <action name="actionReceipt_and_Disbursment">
    <property name="text">
-    <string>Reciept and Disbursment</string>
+    <string>Receipt and Disbursment</string>
    </property>
   </action>
-  <action name="actionList_of_Shareholders">
+  <action name="actionShareholders">
    <property name="text">
     <string>Shareholders</string>
    </property>
@@ -284,7 +277,7 @@
     <string>Support</string>
    </property>
   </action>
-  <action name="actionMisc_2">
+  <action name="actionMisc">
    <property name="text">
     <string>Misc</string>
    </property>

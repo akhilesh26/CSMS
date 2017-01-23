@@ -1,6 +1,7 @@
 from Pages.UI.mainWindowUi import Ui_MainWindow 
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
+from Pages.findMember import FindMemberForm
 
 # main application window
 class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -16,7 +17,7 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # # Setup callback for Members
         # self.actionAdd_New.triggered.connect(self.openAdd_New)
-        # self.actionFind.triggered.connect(self.openFind)
+        self.actionFind.triggered.connect(self.openFind)
 
         # # Setup callback for Loan
         # self.actionNew_Loan.triggered.connect(self.openNew_Loan)
@@ -50,6 +51,10 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         # self.actionHelp.triggered.connect(self.openHelp)
         # self.actionAbout.triggered.connect(self.openAbout)
 
+    def openFind(self,*args):
+        print('Open find window')
+        self.window_find = FindMemberForm()
+    
     def openBalance_Sheet(self,*args):
         self.tab_balanceSheet = BalanceSheetForm()
         self.tabWidget.addTab(self.tab_balanceSheet,"Balance Sheet")

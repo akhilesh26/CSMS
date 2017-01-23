@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import QtWidgets
 
-from welcomeForm import CSMSWelcome
+from Pages.welcomeForm import CSMSWelcome
 
 if __name__=='__main__':
     # initialise the application

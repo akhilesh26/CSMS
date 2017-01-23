@@ -1,6 +1,5 @@
-from UI.welcomeFormUi import Ui_Form as welcomeForm
-
-from mainWindow import CSMSMain
+from Pages.UI.welcomeFormUi import Ui_Form as welcomeForm
+from Pages.mainWindow import CSMSMain
 from PyQt5 import QtWidgets
 
 # implement later; return root info from databse

@@ -1,5 +1,6 @@
-from UI.mainWindowUi import Ui_MainWindow as mainWindow
+from Pages.UI.mainWindowUi import Ui_MainWindow as mainWindow
 from PyQt5 import QtWidgets
+from Pages.balanceSheet import BalanceSheetForm
 
 # main application window
 class CSMSMain(QtWidgets.QMainWindow):
@@ -51,14 +52,11 @@ class CSMSMain(QtWidgets.QMainWindow):
         # self.ui.actionAbout.triggered.connect(self.openAbout)
 
     def openBalance_Sheet(self,*args):
-        self.tab_balanceSheet = QtWidgets.QWidget()
-        self.tab_balanceSheet.ui = balanceSheetForm()
-        self.tab_balanceSheet.ui.setupUi(self.tab_balanceSheet)
+        self.tab_balanceSheet = BalanceSheetForm()
         self.ui.tabWidget.addTab(self.tab_balanceSheet,"Balance Sheet")
 
     def openSavings(self,*args):
         self.tabSavings = QtWidgets.QWidget()
-        
         self.tabSavings.ui = savingsForm()
         self.tabSavings.ui.setupUi(self.tabSavings)
         self.ui.tabWidget.addTab(self.tabSavings,"Savings")

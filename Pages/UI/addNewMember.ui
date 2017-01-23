@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>771</width>
+    <height>766</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add New Member</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout_2">
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>NAME:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="nameLineEdit">
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>FATHER/HUSBAND</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="fatherLineEdit"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>DOB:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QDateEdit" name="dobDateEdit">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+     <property name="date">
+      <date>
+       <year>2017</year>
+       <month>1</month>
+       <day>1</day>
+      </date>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>GENDER:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="genderComboBox">
+     <item>
+      <property name="text">
+       <string>MALE</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FEMALE</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>VILLAGE:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="villageLineEdit"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>BLOCK:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="blockLineEdit"/>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>DISTRICT:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLineEdit" name="districtLineEdit"/>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>STATE:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QLineEdit" name="stateLineEdit"/>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>PIN CODE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QLineEdit" name="pinCodeLineEdit"/>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>MOBILE:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1">
+    <widget class="QLineEdit" name="mobileLineEdit"/>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>EMAIL</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="1">
+    <widget class="QLineEdit" name="emailLineEdit"/>
+   </item>
+   <item row="13" column="0">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>PROFESSION</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="1">
+    <widget class="QLineEdit" name="professionLineEdit"/>
+   </item>
+   <item row="14" column="0">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>OFFICE:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="1">
+    <widget class="QLineEdit" name="officeLineEdit"/>
+   </item>
+   <item row="17" column="0">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>PHOTO</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="0">
+    <widget class="QLabel" name="label_15">
+     <property name="text">
+      <string>SIGNATURE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="23" column="0">
+    <widget class="QLabel" name="label_16">
+     <property name="text">
+      <string>MEMBERSHIP TYPE:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="23" column="1">
+    <widget class="QComboBox" name="membershipTypeComboBox">
+     <item>
+      <property name="text">
+       <string>SHAREHOLDER</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>NOMINAL MEMBER</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="24" column="0">
+    <widget class="QLabel" name="label_20">
+     <property name="text">
+      <string>MEMBERSHIP FEE:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="24" column="1">
+    <widget class="QLineEdit" name="membershipFeeLineEdit"/>
+   </item>
+   <item row="25" column="0">
+    <widget class="QLabel" name="label_17">
+     <property name="text">
+      <string>NUMBER OF SHARE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="25" column="1">
+    <widget class="QLineEdit" name="numberOfShareLineEdit"/>
+   </item>
+   <item row="26" column="0">
+    <widget class="QLabel" name="label_18">
+     <property name="text">
+      <string>CURRENT RATE OF SHARE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="26" column="1">
+    <widget class="QLineEdit" name="currentRateLineEdit"/>
+   </item>
+   <item row="29" column="0">
+    <widget class="QLabel" name="label_19">
+     <property name="text">
+      <string>PAYBLE AMOUNT:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="29" column="1">
+    <widget class="QLineEdit" name="paybleAmountLineEdit"/>
+   </item>
+   <item row="33" column="0">
+    <widget class="QLabel" name="label_21">
+     <property name="text">
+      <string>OPENING DATE:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="33" column="1">
+    <widget class="QDateEdit" name="openingDateEdit">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+     <property name="date">
+      <date>
+       <year>2017</year>
+       <month>1</month>
+       <day>1</day>
+      </date>
+     </property>
+    </widget>
+   </item>
+   <item row="40" column="1">
+    <widget class="QPushButton" name="addNewPushButton">
+     <property name="text">
+      <string>ADD NEW</string>
+     </property>
+    </widget>
+   </item>
+   <item row="41" column="1">
+    <widget class="QPushButton" name="updatePushButton">
+     <property name="text">
+      <string>UPDATE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="42" column="1">
+    <widget class="QPushButton" name="cancelPushButton">
+     <property name="text">
+      <string>CANCEL</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

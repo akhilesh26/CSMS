@@ -1,4 +1,5 @@
 from Pages.UI.mainWindowUi import Ui_MainWindow as mainWindow
+from Pages.addNewMember import AddNewMemberForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 
@@ -16,7 +17,7 @@ class CSMSMain(QtWidgets.QMainWindow):
         self.ui.tabWidget.tabCloseRequested.connect(self.ui.tabWidget.removeTab)
 
         # # Setup callback for Members
-        # self.ui.actionAdd_New.triggered.connect(self.openAdd_New)
+        self.ui.actionAdd_New.triggered.connect(self.openAdd_New)
         # self.ui.actionFind.triggered.connect(self.openFind)
 
         # # Setup callback for Loan
@@ -50,6 +51,9 @@ class CSMSMain(QtWidgets.QMainWindow):
         # # Setup callback for Restore
         # self.ui.actionHelp.triggered.connect(self.openHelp)
         # self.ui.actionAbout.triggered.connect(self.openAbout)
+
+    def openAdd_New(self,*args):
+        self.window_addNewMember = AddNewMemberForm()
 
     def openBalance_Sheet(self,*args):
         self.tab_balanceSheet = BalanceSheetForm()

@@ -62,7 +62,7 @@
     <property name="title">
      <string>Loan</string>
     </property>
-    <addaction name="actionNew_Load"/>
+    <addaction name="actionNew_Loan"/>
     <addaction name="actionView_Loans"/>
    </widget>
    <widget class="QMenu" name="menuTransaction">
@@ -105,7 +105,7 @@
     <property name="title">
      <string>Backup</string>
     </property>
-    <addaction name="actionRestoree"/>
+    <addaction name="actionRestore"/>
     <addaction name="actionSync"/>
    </widget>
    <widget class="QMenu" name="menuExpense">
@@ -147,7 +147,7 @@
     <string>Find Member</string>
    </property>
   </action>
-  <action name="actionNew_Load">
+  <action name="actionNew_Loan">
    <property name="text">
     <string>New Loan</string>
    </property>
@@ -257,7 +257,7 @@
     <string>Sync</string>
    </property>
   </action>
-  <action name="actionRestoree">
+  <action name="actionRestore">
    <property name="text">
     <string>Restore</string>
    </property>

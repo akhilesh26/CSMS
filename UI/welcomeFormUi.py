@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'firstdialog.ui'
+# Form implementation generated from reading ui file 'welcomeForm.ui'
 #
 # Created by: PyQt5 UI code generator 5.7
 #
@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(310, 185)
+        Form.resize(310, 179)
         self.gridLayout = QtWidgets.QGridLayout(Form)
         self.gridLayout.setContentsMargins(9, 9, 9, 9)
         self.gridLayout.setSpacing(6)
@@ -25,6 +25,7 @@ class Ui_Form(object):
         self.label.setObjectName("label")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label)
         self.usernameLineEdit = QtWidgets.QLineEdit(Form)
+        self.usernameLineEdit.setStyleSheet("")
         self.usernameLineEdit.setObjectName("usernameLineEdit")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.usernameLineEdit)
         self.label_2 = QtWidgets.QLabel(Form)

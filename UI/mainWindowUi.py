@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'MainWindow.ui'
+# Form implementation generated from reading ui file 'mainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.7
 #
@@ -57,8 +57,8 @@ class Ui_MainWindow(object):
         self.actionAdd_New.setObjectName("actionAdd_New")
         self.actionFind = QtWidgets.QAction(MainWindow)
         self.actionFind.setObjectName("actionFind")
-        self.actionNew_Load = QtWidgets.QAction(MainWindow)
-        self.actionNew_Load.setObjectName("actionNew_Load")
+        self.actionNew_Loan = QtWidgets.QAction(MainWindow)
+        self.actionNew_Loan.setObjectName("actionNew_Loan")
         self.actionView_Loans = QtWidgets.QAction(MainWindow)
         self.actionView_Loans.setObjectName("actionView_Loans")
         self.actionVoucher = QtWidgets.QAction(MainWindow)
@@ -101,8 +101,8 @@ class Ui_MainWindow(object):
         self.actionView_Expense.setObjectName("actionView_Expense")
         self.actionSync = QtWidgets.QAction(MainWindow)
         self.actionSync.setObjectName("actionSync")
-        self.actionRestoree = QtWidgets.QAction(MainWindow)
-        self.actionRestoree.setObjectName("actionRestoree")
+        self.actionRestore = QtWidgets.QAction(MainWindow)
+        self.actionRestore.setObjectName("actionRestore")
         self.actionHelp = QtWidgets.QAction(MainWindow)
         self.actionHelp.setObjectName("actionHelp")
         self.actionAbout = QtWidgets.QAction(MainWindow)
@@ -113,7 +113,7 @@ class Ui_MainWindow(object):
         self.actionMisc.setObjectName("actionMisc")
         self.menuMembers.addAction(self.actionAdd_New)
         self.menuMembers.addAction(self.actionFind)
-        self.menuLoan.addAction(self.actionNew_Load)
+        self.menuLoan.addAction(self.actionNew_Loan)
         self.menuLoan.addAction(self.actionView_Loans)
         self.menuTransaction.addAction(self.actionVoucher)
         self.menuTransaction.addAction(self.actionPay_Slip)
@@ -131,7 +131,7 @@ class Ui_MainWindow(object):
         self.menuReport.addAction(self.actionTerm_Deposit_Account)
         self.menuReport.addAction(self.actionMisc)
         self.menuReport.addSeparator()
-        self.menuBackup.addAction(self.actionRestoree)
+        self.menuBackup.addAction(self.actionRestore)
         self.menuBackup.addAction(self.actionSync)
         self.menuExpense.addAction(self.actionNew_Expense)
         self.menuExpense.addAction(self.actionView_Expense)
@@ -165,7 +165,7 @@ class Ui_MainWindow(object):
         self.menuExit.setTitle(_translate("MainWindow", "Exit"))
         self.actionAdd_New.setText(_translate("MainWindow", "Add New"))
         self.actionFind.setText(_translate("MainWindow", "Find Member"))
-        self.actionNew_Load.setText(_translate("MainWindow", "New Loan"))
+        self.actionNew_Loan.setText(_translate("MainWindow", "New Loan"))
         self.actionView_Loans.setText(_translate("MainWindow", "View Loan"))
         self.actionVoucher.setText(_translate("MainWindow", "Voucher"))
         self.actionPay_Slip.setText(_translate("MainWindow", "Pay Slip"))
@@ -187,7 +187,7 @@ class Ui_MainWindow(object):
         self.actionNew_Expense.setText(_translate("MainWindow", "New Expense"))
         self.actionView_Expense.setText(_translate("MainWindow", "View Expense"))
         self.actionSync.setText(_translate("MainWindow", "Sync"))
-        self.actionRestoree.setText(_translate("MainWindow", "Restore"))
+        self.actionRestore.setText(_translate("MainWindow", "Restore"))
         self.actionHelp.setText(_translate("MainWindow", "Help"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
         self.actionSupport.setText(_translate("MainWindow", "Support"))

@@ -17,7 +17,7 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.tabWidget.tabCloseRequested.connect(self.tabWidget.removeTab)
 
         # # Setup callback for Members
-        self.ui.actionAdd_New.triggered.connect(self.openAdd_New)
+        self.actionAdd_New.triggered.connect(self.openAdd_New)
         self.actionFind.triggered.connect(self.openFind)
 
         # # Setup callback for Loan

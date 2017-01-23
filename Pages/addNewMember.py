@@ -1,5 +1,6 @@
 from Pages.UI.addNewMemberUi import Ui_Form 
 from PyQt5 import QtWidgets
+from Pages.confirmDialog import ConfirmDialog
 
 class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
 	def __init__(self):
@@ -10,36 +11,59 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
 		self.addNewPushButton.clicked.connect(self.addNew)
 		self.updatePushButton.clicked.connect(self.update)
 
+	def ignore(self):
+			self.dialog.destroy()
+
 	def cancel(self):
+
+		def dialogAccept():
+			self.close()
+			self.dialog.destroy()
+
 		print('Cancel button clicked')
-		self.close()
+		self.dialog=ConfirmDialog()
+		self.dialog.accept=dialogAccept
+		self.dialog.reject=self.ignore
+
+	
+
 	def update(self):
 		print("update button clicked")
 
 	def addNew(self):
-		print("add New button clicked")
-		name=self.nameLineEdit.text()
-		father=self.fatherLineEdit.text()
-		dob=self.dobDateEdit.text()
-		gender=self.genderComboBox.currentText()
+		self.dialog=ConfirmDialog()
+		
+		def dialogAccept():
+			print("add New button clicked")
+			name=self.nameLineEdit.text()
+			father=self.fatherLineEdit.text()
+			dob=self.dobDateEdit.text()
+			gender=self.genderComboBox.currentText()
 
-		village=self.villageLineEdit.text()
-		block=self.blockLineEdit.text()
-		district=self.districtLineEdit.text()
-		state=self.stateLineEdit.text()
-		pin=self.pinCodeLineEdit.text()
+			village=self.villageLineEdit.text()
+			block=self.blockLineEdit.text()
+			district=self.districtLineEdit.text()
+			state=self.stateLineEdit.text()
+			pin=self.pinCodeLineEdit.text()
 
-		mobile=self.mobileLineEdit.text()
-		email=self.emailLineEdit.text()
-		profession=self.professionLineEdit.text()
-		office=self.officeLineEdit.text()
+			mobile=self.mobileLineEdit.text()
+			email=self.emailLineEdit.text()
+			profession=self.professionLineEdit.text()
+			office=self.officeLineEdit.text()
 
-		membershipType=self.membershipTypeComboBox.currentText()
-		membershipFee=self.membershipFeeLineEdit.text()
-		numberOfShare=self.numberOfShareLineEdit.text()
+			membershipType=self.membershipTypeComboBox.currentText()
+			membershipFee=self.membershipFeeLineEdit.text()
+			numberOfShare=self.numberOfShareLineEdit.text()
 
-		currentRate=self.currentRateLineEdit.text()
-		paybleAmount=self.paybleAmountLineEdit.text()
-		openingDate=self.openingDateEdit.text()
+			currentRate=self.currentRateLineEdit.text()
+			paybleAmount=self.paybleAmountLineEdit.text()
+			openingDate=self.openingDateEdit.text()
 
-		print(name,father,dob,gender,village,block,district,state,pin,mobile,email,profession,membershipType,numberOfShare,currentRate,paybleAmount,openingDate)
+			print(name,father,dob,gender,village,block,district,state,pin,mobile,email,\
+				profession,membershipType,numberOfShare,currentRate,paybleAmount,openingDate)
+
+			self.close()
+			self.dialog.destroy()
+
+		self.dialog.accept=dialogAccept
+		self.dialog.reject=self.ignore

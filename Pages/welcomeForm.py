@@ -8,17 +8,16 @@ def getRootInfo():
     return "ut","12"
 
 # first dialog box; username password verify`
-class CSMSWelcome(QtWidgets.QDialog):
+class CSMSWelcome(QtWidgets.QDialog,welcomeForm):
     def __init__(self):
         super().__init__()
-        self.ui = welcomeForm()
-        self.ui.setupUi(self)
+        self.setupUi(self)
         self.setWindowTitle('CSMS Software')
-        self.ui.enterPushButton.clicked.connect(self.verify)
+        self.enterPushButton.clicked.connect(self.verify)
 
     def verify(self):
-        usernameInput = self.ui.usernameLineEdit.text()
-        passwordInput = self.ui.passwordLineEdit.text()
+        usernameInput = self.usernameLineEdit.text()
+        passwordInput = self.passwordLineEdit.text()
         print(usernameInput,passwordInput)
         if (usernameInput,passwordInput)==getRootInfo():
             text = "Congrats! You can come in"
@@ -28,7 +27,7 @@ class CSMSWelcome(QtWidgets.QDialog):
         else:
             text = "Wrong username or password! Try again"
         text = "<b>"+text+"</b"
-        self.ui.welcomeMessageLabel.setText(text)
+        self.welcomeMessageLabel.setText(text)
 
     def initialiseMain(self):
         csms2 = CSMSMain()

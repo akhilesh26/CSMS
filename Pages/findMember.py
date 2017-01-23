@@ -7,8 +7,10 @@ class FindMemberForm(QtWidgets.QWidget,Ui_Form):
         self.setupUi(self)
 
         # Get input values
-        # self.methodSelected = 
+        self.methodSelected = self.nameRadioButton.isEnabled()
         self.SearchLineEdit.textChanged.connect(self.getsearchresult)
+        # print(self.methodSelected)
+        
         self.show()
 
     def getsearchresult(self,*args):

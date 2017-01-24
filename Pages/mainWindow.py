@@ -3,6 +3,7 @@ from Pages.addNewMember import AddNewMemberForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
+from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
 
 # main application window
 class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -78,4 +79,17 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
     def exitsafely(self,*args):
         # implement a "are you sure dialog box" later
         self.close()
+        
+    #confirmation for close mainWindow
+    def closeEvent(self, event):
+        
+        reply = QMessageBox.question(self, 'Message',
+            "Are you sure to quit?", QMessageBox.Yes | 
+            QMessageBox.No, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            event.accept()
+            self.close()
+        else:
+            event.ignore()   
 

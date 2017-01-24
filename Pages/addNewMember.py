@@ -4,15 +4,15 @@ from Pages.confirmDialog import ConfirmDialog
 
 class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
 	def __init__(self):
-		super().__init__()
+        super().__init__()
 		self.setupUi(self)
-		self.show()
+        self.show()
 		self.cancelPushButton.clicked.connect(self.cancel)
 		self.addNewPushButton.clicked.connect(self.addNew)
 		self.updatePushButton.clicked.connect(self.update)
 
 	def ignore(self):
-			self.dialog.destroy()
+		self.dialog.destroy()
 
 	def cancel(self):
 

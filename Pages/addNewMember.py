@@ -1,5 +1,5 @@
 from Pages.UI.addNewMemberUi import Ui_Form 
-from PyQt5 import QtWidgets, QtGui
+from PyQt5 import QtWidgets, QtGui, QtCore
 from Pages.confirmDialog import ConfirmDialog
 from Pages.Database.member import Member
 from Pages.Database.database import Database 
@@ -13,14 +13,11 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.cancelPushButton.clicked.connect(self.cancel)
         self.addNewPushButton.clicked.connect(self.addNew)
         self.updatePushButton.clicked.connect(self.update)
+
         self.uploadPhotoPushButton.clicked.connect(self.uploadPhoto)
         self.uploadSignPushButton.clicked.connect(self.uploadSign)
         self.member = Member()
    
-
-    def cancel(self):
-        print('Cancel button clicked')
-    
 
     def update(self):
         print("update button clicked")
@@ -82,4 +79,3 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
     def uploadSign(self):
         self.fileName=QtWidgets.QFileDialog.getOpenFileName(self,'Open File','.')[0]
         self.signatureLabel.setPixmap(QtGui.QPixmap(self.fileName))
-

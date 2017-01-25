@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="image res">
+    <file>pranavDP.jpg</file>
+  </qresource>
+</RCC>

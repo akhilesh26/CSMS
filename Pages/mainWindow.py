@@ -1,5 +1,6 @@
 from Pages.UI.mainWindowUi import Ui_MainWindow 
 from Pages.addNewMember import AddNewMemberForm
+from Pages.depositeForm import DepositeForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
@@ -25,7 +26,7 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         # self.actionNew_Loan.triggered.connect(self.openNew_Loan)
         # self.actionView_Loans.triggered.connect(self.openView_Loans)
         # # Setup callback for Transaction
-        # self.actionVoucher.triggered.connect(self.openVoucher)
+        self.actionVoucher.triggered.connect(self.openDepositeVoucher)
         # self.actionPay_Slip.triggered.connect(self.openPay_Slip)
         
         # Setup callback for all Reports
@@ -56,6 +57,9 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
     def openAdd_New(self,*args):
         self.window_addNewMember = AddNewMemberForm()
 
+    def openDepositeVoucher(self,*args):
+        self.window_deposite=DepositeForm()
+
     def openFind(self,*args):
         print('Open find window')
         self.window_find = FindMemberForm()
@@ -81,15 +85,12 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.close()
         
     #confirmation for close mainWindow
-    def closeEvent(self, event):
-        
+    def closeEvent(self, event):        
         reply = QMessageBox.question(self, 'Message',
             "Are you sure to quit?", QMessageBox.Yes | 
             QMessageBox.No, QMessageBox.No)
-
         if reply == QMessageBox.Yes:
             event.accept()
             self.close()
         else:
-            event.ignore()   
-
+            event.ignore()

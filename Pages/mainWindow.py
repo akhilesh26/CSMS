@@ -1,6 +1,7 @@
 from Pages.UI.mainWindowUi import Ui_MainWindow 
 from Pages.addNewMember import AddNewMemberForm
 from Pages.depositeForm import DepositeForm
+from Pages.withdrawalForm import WithdrawalForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
@@ -30,7 +31,7 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         # self.actionView_Loans.triggered.connect(self.openView_Loans)
         # # Setup callback for Transaction
         self.actionVoucher.triggered.connect(self.openDepositeVoucher)
-        # self.actionPay_Slip.triggered.connect(self.openPay_Slip)
+        self.actionPay_Slip.triggered.connect(self.openWithdrawalVoucher)
         
         # Setup callback for all Reports
         self.actionRecurring_Deposit.triggered.connect(self.openRecurring_Deposit)
@@ -67,6 +68,9 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def openDepositeVoucher(self,*args):
         self.window_deposite=DepositeForm()
+
+    def openWithdrawalVoucher(self,*args):
+        self.window_withdrawal=WithdrawalForm()
 
     def openFind(self,*args):
         print('Open find window')

@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>521</width>
-    <height>384</height>
+    <height>363</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Deposite Form</string>
+   <string>Withdrawal Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">margin:5px;
+   <string notr="true">
 padding:3px;
 
 </string>
@@ -61,21 +61,35 @@ padding:3px;
        <item row="3" column="0">
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>Amount:</string>
+          <string>Current Balance:</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
+        <widget class="QLineEdit" name="currentBalanceLineEdit">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
         <widget class="QLineEdit" name="amountLineEdit"/>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_6">
          <property name="text">
+          <string>Amount:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
           <string>Payment Mode:</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="5" column="1">
         <widget class="QComboBox" name="paymentModeComboBox">
          <item>
           <property name="text">
@@ -89,20 +103,10 @@ padding:3px;
          </item>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Deposite Date:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QDateEdit" name="depositeDateEdit">
+       <item row="6" column="1">
+        <widget class="QDateEdit" name="withdrawalDateEdit">
          <property name="calendarPopup">
           <bool>true</bool>
-         </property>
-         <property name="timeSpec">
-          <enum>Qt::LocalTime</enum>
          </property>
          <property name="date">
           <date>
@@ -116,27 +120,41 @@ padding:3px;
        <item row="6" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
+          <string>Payment Date:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
           <string>VoucherNo:</string>
          </property>
         </widget>
        </item>
-       <item row="6" column="1">
+       <item row="7" column="1">
         <widget class="QLineEdit" name="voucherNoLineEdit"/>
        </item>
-       <item row="7" column="1">
-        <widget class="QLineEdit" name="commentLineEdit"/>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="label_9">
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_2">
          <property name="text">
           <string>Comment:</string>
          </property>
         </widget>
        </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="commentLineEdit"/>
+       </item>
       </layout>
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Photo:</string>
+         </property>
+        </widget>
+       </item>
        <item>
         <widget class="QLabel" name="photoLabel">
          <property name="minimumSize">
@@ -166,6 +184,38 @@ padding:3px;
         </widget>
        </item>
        <item>
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Signature:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="signatureLabel">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255)</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -179,22 +229,9 @@ padding:3px;
         </spacer>
        </item>
        <item>
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="depositePushButton">
+        <widget class="QPushButton" name="withdrawalPushButton">
          <property name="text">
-          <string>Deposite</string>
+          <string>Withdraw</string>
          </property>
         </widget>
        </item>

@@ -3,12 +3,18 @@ from Pages.addNewMember import AddNewMemberForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
+from Pages.UI.addNewMemberUi import Ui_Form 
+#from Pages.Database.database import Database
+
+#add new member window
+
 
 # main application window
 class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,parent = None):
+        super().__init__(parent)
         self.setupUi(self)
+        print('here')
 
         # A method for exiting application
         self.menuExit.mouseReleaseEvent = self.exitsafely
@@ -52,7 +58,12 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         # self.actionHelp.triggered.connect(self.openHelp)
         # self.actionAbout.triggered.connect(self.openAbout)
 
+        # Database operations
+        #self.members = Database()
+    
+
     def openAdd_New(self,*args):
+        print(self)
         self.window_addNewMember = AddNewMemberForm()
 
     def openFind(self,*args):
@@ -78,4 +89,8 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
     def exitsafely(self,*args):
         # implement a "are you sure dialog box" later
         self.close()
+
+    def loadDatabase():
+        pass
+
 

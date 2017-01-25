@@ -1,11 +1,15 @@
 from Pages.UI.addNewMemberUi import Ui_Form 
 from PyQt5 import QtWidgets
 
-class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
-	def __init__(self):
-		super().__init__()
+class AddNewMemberForm(QtWidgets.QWidget,Ui_Form):
+	def __init__(self,parent = None):
+		super().__init__(parent)
+		print(parent)
 		self.setupUi(self)
 		self.show()
+		self.parent = parent
+
+		# callback functions
 		self.cancelPushButton.clicked.connect(self.cancel)
 		self.addNewPushButton.clicked.connect(self.addNew)
 		self.updatePushButton.clicked.connect(self.update)

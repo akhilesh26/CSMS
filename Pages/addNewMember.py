@@ -2,9 +2,11 @@ from Pages.UI.addNewMemberUi import Ui_Form
 from PyQt5 import QtWidgets, QtGui
 from Pages.confirmDialog import ConfirmDialog
 
+
 class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
-    def __init__(self):
+    def __init__(self,parent = None):
         super().__init__()
+        self.parent = parent
         self.setupUi(self)
         self.show()
         self.cancelPushButton.clicked.connect(self.cancel)
@@ -77,3 +79,4 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
     def uploadSign(self):
         self.fileName=QtWidgets.QFileDialog.getOpenFileName(self,'Open File','.')[0]
         self.signatureLabel.setPixmap(QtGui.QPixmap(self.fileName))
+

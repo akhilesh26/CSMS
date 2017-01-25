@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Pages/UI/findMember.ui'
+# Form implementation generated from reading ui file 'findMember.ui'
 #
-# Created by: PyQt5 UI code generator 5.7
+# Created by: PyQt5 UI code generator 5.5.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -27,15 +27,15 @@ class Ui_Form(object):
         self.memberIdRadioButton = QtWidgets.QRadioButton(Form)
         self.memberIdRadioButton.setObjectName("memberIdRadioButton")
         self.horizontalLayout.addWidget(self.memberIdRadioButton)
-        self.SearchLineEdit = QtWidgets.QLineEdit(Form)
-        self.SearchLineEdit.setObjectName("SearchLineEdit")
-        self.horizontalLayout.addWidget(self.SearchLineEdit)
+        self.searchLineEdit = QtWidgets.QLineEdit(Form)
+        self.searchLineEdit.setObjectName("searchLineEdit")
+        self.horizontalLayout.addWidget(self.searchLineEdit)
         self.verticalLayout_2.addLayout(self.horizontalLayout)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.MembersListWidget = QtWidgets.QListWidget(Form)
-        self.MembersListWidget.setObjectName("MembersListWidget")
-        self.horizontalLayout_2.addWidget(self.MembersListWidget)
+        self.membersList = QtWidgets.QListWidget(Form)
+        self.membersList.setObjectName("membersList")
+        self.horizontalLayout_2.addWidget(self.membersList)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.verticalLayout.addLayout(self.verticalLayout_2)
 
@@ -48,7 +48,7 @@ class Ui_Form(object):
         self.phoneRadioButton.setText(_translate("Form", "Phone "))
         self.nameRadioButton.setText(_translate("Form", "Name"))
         self.memberIdRadioButton.setText(_translate("Form", "Member Id"))
-        self.SearchLineEdit.setPlaceholderText(_translate("Form", "Type here..."))
+        self.searchLineEdit.setPlaceholderText(_translate("Form", "Type here..."))
 
 
 if __name__ == "__main__":

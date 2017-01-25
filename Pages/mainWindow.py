@@ -4,13 +4,16 @@ from Pages.depositeForm import DepositeForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
-from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
+from Pages.UI.addNewMemberUi import Ui_Form 
+#from Pages.Database.database import Database
+
 
 # main application window
 class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,parent = None):
+        super().__init__(parent)
         self.setupUi(self)
+        print('here')
 
         # A method for exiting application
         self.menuExit.mouseReleaseEvent = self.exitsafely
@@ -54,7 +57,12 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         # self.actionHelp.triggered.connect(self.openHelp)
         # self.actionAbout.triggered.connect(self.openAbout)
 
+        # Database operations
+        #self.members = Database()
+    
+
     def openAdd_New(self,*args):
+        print(self)
         self.window_addNewMember = AddNewMemberForm()
 
     def openDepositeVoucher(self,*args):
@@ -85,12 +93,19 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.close()
         
     #confirmation for close mainWindow
-    def closeEvent(self, event):        
-        reply = QMessageBox.question(self, 'Message',
-            "Are you sure to quit?", QMessageBox.Yes | 
-            QMessageBox.No, QMessageBox.No)
-        if reply == QMessageBox.Yes:
+
+    def closeEvent(self, event):
+        
+        reply = QtWidgets.QMessageBox.question(self, 'Message',
+            "Are you sure to quit?", QtWidgets.QMessageBox.Yes | 
+            QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)
+
+        if reply == QtWidgets.QMessageBox.Yes:
             event.accept()
             self.close()
         else:
-            event.ignore()
+            event.ignore()   
+
+    def loadDatabase():
+        pass
+

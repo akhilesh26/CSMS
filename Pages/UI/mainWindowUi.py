@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Pages/UI/mainWindow.ui'
 #
-# Created by: PyQt5 UI code generator 5.7.1
+# Created by: PyQt5 UI code generator 5.7
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 638, 19))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 638, 23))
         self.menubar.setObjectName("menubar")
         self.menuMembers = QtWidgets.QMenu(self.menubar)
         self.menuMembers.setObjectName("menuMembers")
@@ -111,12 +111,19 @@ class Ui_MainWindow(object):
         self.actionSupport.setObjectName("actionSupport")
         self.actionMisc = QtWidgets.QAction(MainWindow)
         self.actionMisc.setObjectName("actionMisc")
+        self.actionDeposit = QtWidgets.QAction(MainWindow)
+        self.actionDeposit.setObjectName("actionDeposit")
+        self.actionWithdraw = QtWidgets.QAction(MainWindow)
+        self.actionWithdraw.setObjectName("actionWithdraw")
+        self.actionTransfer = QtWidgets.QAction(MainWindow)
+        self.actionTransfer.setObjectName("actionTransfer")
         self.menuMembers.addAction(self.actionAdd_New)
         self.menuMembers.addAction(self.actionFind)
         self.menuLoan.addAction(self.actionNew_Loan)
         self.menuLoan.addAction(self.actionView_Loans)
-        self.menuTransaction.addAction(self.actionVoucher)
-        self.menuTransaction.addAction(self.actionPay_Slip)
+        self.menuTransaction.addAction(self.actionDeposit)
+        self.menuTransaction.addAction(self.actionWithdraw)
+        self.menuTransaction.addAction(self.actionTransfer)
         self.menuAccounts.addAction(self.actionRecurring_Deposit)
         self.menuAccounts.addAction(self.actionFixed_Deposit)
         self.menuAccounts.addAction(self.actionSavings)
@@ -167,8 +174,8 @@ class Ui_MainWindow(object):
         self.actionFind.setText(_translate("MainWindow", "Find Member"))
         self.actionNew_Loan.setText(_translate("MainWindow", "New Loan"))
         self.actionView_Loans.setText(_translate("MainWindow", "View Loan"))
-        self.actionVoucher.setText(_translate("MainWindow", "Voucher"))
-        self.actionPay_Slip.setText(_translate("MainWindow", "Pay Slip"))
+        self.actionVoucher.setText(_translate("MainWindow", "Deposit"))
+        self.actionPay_Slip.setText(_translate("MainWindow", "Withdraw"))
         self.actionBalance_Sheet.setText(_translate("MainWindow", "Balance Sheet"))
         self.actionProfit_and_Loss.setText(_translate("MainWindow", "Profit and Loss"))
         self.actionReceipt_and_Disbursment.setText(_translate("MainWindow", "Receipt and Disbursment"))
@@ -192,14 +199,7 @@ class Ui_MainWindow(object):
         self.actionAbout.setText(_translate("MainWindow", "About"))
         self.actionSupport.setText(_translate("MainWindow", "Support"))
         self.actionMisc.setText(_translate("MainWindow", "Misc"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+        self.actionDeposit.setText(_translate("MainWindow", "Deposit"))
+        self.actionWithdraw.setText(_translate("MainWindow", "Withdraw"))
+        self.actionTransfer.setText(_translate("MainWindow", "Transfer"))
 

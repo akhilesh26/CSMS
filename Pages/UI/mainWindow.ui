@@ -48,7 +48,7 @@
      <x>0</x>
      <y>0</y>
      <width>638</width>
-     <height>19</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMembers">
@@ -69,8 +69,9 @@
     <property name="title">
      <string>Transaction</string>
     </property>
-    <addaction name="actionVoucher"/>
-    <addaction name="actionPay_Slip"/>
+    <addaction name="actionDeposit"/>
+    <addaction name="actionWithdraw"/>
+    <addaction name="actionTransfer"/>
    </widget>
    <widget class="QMenu" name="menuReport">
     <property name="title">
@@ -159,12 +160,12 @@
   </action>
   <action name="actionVoucher">
    <property name="text">
-    <string>Voucher</string>
+    <string>Deposit</string>
    </property>
   </action>
   <action name="actionPay_Slip">
    <property name="text">
-    <string>Pay Slip</string>
+    <string>Withdraw</string>
    </property>
   </action>
   <action name="actionBalance_Sheet">
@@ -280,6 +281,21 @@
   <action name="actionMisc">
    <property name="text">
     <string>Misc</string>
+   </property>
+  </action>
+  <action name="actionDeposit">
+   <property name="text">
+    <string>Deposit</string>
+   </property>
+  </action>
+  <action name="actionWithdraw">
+   <property name="text">
+    <string>Withdraw</string>
+   </property>
+  </action>
+  <action name="actionTransfer">
+   <property name="text">
+    <string>Transfer</string>
    </property>
   </action>
  </widget>

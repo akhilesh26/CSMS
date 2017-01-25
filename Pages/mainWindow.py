@@ -1,5 +1,7 @@
 from Pages.UI.mainWindowUi import Ui_MainWindow 
 from Pages.addNewMember import AddNewMemberForm
+from Pages.transfer import TransferForm
+from Pages.newLoan import NewLoanForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
@@ -22,11 +24,12 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionFind.triggered.connect(self.openFind)
 
         # # Setup callback for Loan
-        # self.actionNew_Loan.triggered.connect(self.openNew_Loan)
+        self.actionNew_Loan.triggered.connect(self.openNew_Loan)
         # self.actionView_Loans.triggered.connect(self.openView_Loans)
         # # Setup callback for Transaction
-        # self.actionVoucher.triggered.connect(self.openVoucher)
-        # self.actionPay_Slip.triggered.connect(self.openPay_Slip)
+        self.actionTransfer.triggered.connect(self.openTransfer)
+        # self.actionDeposit.triggered.connect(self.openDeposit)
+        # self.actionWithdraw.triggered.connect(self.openWithdraw)
         
         # Setup callback for all Reports
         self.actionRecurring_Deposit.triggered.connect(self.openRecurring_Deposit)
@@ -53,6 +56,10 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         # self.actionHelp.triggered.connect(self.openHelp)
         # self.actionAbout.triggered.connect(self.openAbout)
 
+    def openNew_Loan(self, *args):
+        print('new loan page opened')
+        self.windown_newLoan = NewLoanForm()
+
     def openAdd_New(self,*args):
         self.window_addNewMember = AddNewMemberForm()
 
@@ -75,6 +82,9 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.tabRecurring_Deposit.ui = recurringdepositForm()
         self.tabRecurring_Deposit.ui.setupUi(self.tabRecurring_Deposit)
         self.tabWidget.addTab(self.tabRecurring_Deposit,"Recurring Deposit")
+
+    def openTransfer(self, *args):
+        self.window_transfer = TransferForm()
 
     def exitsafely(self,*args):
         # implement a "are you sure dialog box" later

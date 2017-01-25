@@ -4,7 +4,7 @@ from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
 from Pages.UI.addNewMemberUi import Ui_Form 
-#from Pages.Database.database import Database
+from Pages.Database.database import Database
 
 
 # main application window
@@ -12,7 +12,7 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self,parent = None):
         super().__init__(parent)
         self.setupUi(self)
-        print('here')
+        #self.database = database('database')
 
         # A method for exiting application
         self.menuExit.mouseReleaseEvent = self.exitsafely

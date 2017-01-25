@@ -1,7 +1,8 @@
 from Pages.UI.addNewMemberUi import Ui_Form 
 from PyQt5 import QtWidgets, QtGui
 from Pages.confirmDialog import ConfirmDialog
-
+from Pages.Database.member import Member
+from Pages.Database.database import Database 
 
 class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
     def __init__(self,parent = None):
@@ -14,63 +15,65 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.updatePushButton.clicked.connect(self.update)
         self.uploadPhotoPushButton.clicked.connect(self.uploadPhoto)
         self.uploadSignPushButton.clicked.connect(self.uploadSign)
-
-    def ignore(self):
-        self.dialog.destroy()
+        self.member = Member()
+   
 
     def cancel(self):
-
-        def dialogAccept():
-            self.close()
-            self.dialog.destroy()
-
         print('Cancel button clicked')
-        self.dialog=ConfirmDialog()
-        self.dialog.accept=dialogAccept
-        self.dialog.reject=self.ignore
-
     
 
     def update(self):
         print("update button clicked")
 
     def addNew(self):
+       
+        
+        print("add New button clicked")
+        self.member.set('Name', self.nameLineEdit.text())
+
+        self.member.set('Father',self.fatherLineEdit.text())
+        self.member.set('DOB',self.dobDateEdit.text())
+        self.member.set('Gender',self.genderComboBox.currentText())
+
+        self.member.set('Village',self.villageLineEdit.text())
+
+        self.member.set('Block',self.blockLineEdit.text())
+        self.member.set('District',self.districtLineEdit.text())
+        self.member.set('State',self.stateLineEdit.text())
+        self.member.set('Pin',self.pinCodeLineEdit.text())
+
+        self.member.set('Mobile',self.mobileLineEdit.text())
+        self.member.set('Email',self.emailLineEdit.text())
+        self.member.set('Profession',self.professionLineEdit.text())
+        self.member.set('Office',self.officeLineEdit.text())
+
+        self.member.set('MembershipType',self.membershipTypeComboBox.currentText())
+        self.member.set('MembershipFee',self.membershipFeeLineEdit.text())
+        self.member.set('NumberOfShare',self.numberOfShareLineEdit.text())
+
+        self.member.set('CurrentRate',self.currentRateLineEdit.text())
+        self.member.set('PaybleAmount',self.paybleAmountLineEdit.text())
+        self.member.set('OpeningDate',self.openingDateEdit.text())
+
         self.dialog=ConfirmDialog()
         
-        def dialogAccept():
-            print("add New button clicked")
-            name=self.nameLineEdit.text()
-            father=self.fatherLineEdit.text()
-            dob=self.dobDateEdit.text()
-            gender=self.genderComboBox.currentText()
+        self.dialog.accepted.connect(self.dialogAccept)
+        self.dialog.rejected.connect(self.ignore)
+        # now storing in member
+        
 
-            village=self.villageLineEdit.text()
-            block=self.blockLineEdit.text()
-            district=self.districtLineEdit.text()
-            state=self.stateLineEdit.text()
-            pin=self.pinCodeLineEdit.text()
+    def dialogAccept(self):
+        self.member.print()
 
-            mobile=self.mobileLineEdit.text()
-            email=self.emailLineEdit.text()
-            profession=self.professionLineEdit.text()
-            office=self.officeLineEdit.text()
+        self.dialog.close()
+        self.close()
 
-            membershipType=self.membershipTypeComboBox.currentText()
-            membershipFee=self.membershipFeeLineEdit.text()
-            numberOfShare=self.numberOfShareLineEdit.text()
+    def ignore(self):
+        self.dialog.close()
+            
+    def setValues():
+        pass
 
-            currentRate=self.currentRateLineEdit.text()
-            paybleAmount=self.paybleAmountLineEdit.text()
-            openingDate=self.openingDateEdit.text()
-
-            print(name,father,dob,gender,village,block,district,state,pin,mobile,email,\
-                profession,membershipType,numberOfShare,currentRate,paybleAmount,openingDate)
-
-            self.close()
-            self.dialog.destroy()
-
-        self.dialog.accept=dialogAccept
-        self.dialog.reject=self.ignore
 
     def uploadPhoto(self):
         self.fileName=QtWidgets.QFileDialog.getOpenFileName(self,'Open File','.')[0]

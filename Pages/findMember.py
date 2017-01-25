@@ -8,14 +8,14 @@ class FindMemberForm(QtWidgets.QWidget,Ui_Form):
 
         # Get input values
         self.methodSelected = self.nameRadioButton.isEnabled()
-        self.searchLineEdit.textChanged.connect(self.getsearchresult)
+        self.searchLineEdit.textChanged.connect(self.getSearchResult)
         print(self.methodSelected)
         self.nameRadioButton.clicked.connect(self.membersList.clear)
         self.phoneRadioButton.clicked.connect(self.membersList.clear)
         self.memberIdRadioButton.clicked.connect(self.membersList.clear)
         self.show()
 
-    def getsearchresult(self,str):
+    def getSearchResult(self,str):
         # choose from buttons
         if(self.nameRadioButton.isChecked()):
             #search by name and print list

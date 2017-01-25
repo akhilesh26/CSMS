@@ -6,8 +6,6 @@ from Pages.findMember import FindMemberForm
 from Pages.UI.addNewMemberUi import Ui_Form 
 #from Pages.Database.database import Database
 
-#add new member window
-
 
 # main application window
 class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -89,6 +87,19 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
     def exitsafely(self,*args):
         # implement a "are you sure dialog box" later
         self.close()
+        
+    #confirmation for close mainWindow
+    def closeEvent(self, event):
+        
+        reply = QtWidgets.QMessageBox.question(self, 'Message',
+            "Are you sure to quit?", QtWidgets.QMessageBox.Yes | 
+            QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)
+
+        if reply == QtWidgets.QMessageBox.Yes:
+            event.accept()
+            self.close()
+        else:
+            event.ignore()   
 
     def loadDatabase():
         pass

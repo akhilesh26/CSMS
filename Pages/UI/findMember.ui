@@ -40,7 +40,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="SearchLineEdit">
+        <widget class="QLineEdit" name="searchLineEdit">
          <property name="placeholderText">
           <string>Type here...</string>
          </property>
@@ -51,7 +51,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QListWidget" name="MembersListWidget"/>
+        <widget class="QListWidget" name="membersList"/>
        </item>
       </layout>
      </item>

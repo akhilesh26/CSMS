@@ -2,16 +2,21 @@ from Pages.UI.mainWindowUi import Ui_MainWindow
 from Pages.addNewMember import AddNewMemberForm
 from Pages.transfer import TransferForm
 from Pages.newLoan import NewLoanForm
+from Pages.deposit import DepositForm
+from Pages.withdrawal import WithdrawalForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
-from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
+from Pages.UI.addNewMemberUi import Ui_Form 
+#from Pages.Database.database import Database
+
 
 # main application window
 class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,parent = None):
+        super().__init__(parent)
         self.setupUi(self)
+        print('here')
 
         # A method for exiting application
         self.menuExit.mouseReleaseEvent = self.exitsafely
@@ -28,8 +33,8 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         # self.actionView_Loans.triggered.connect(self.openView_Loans)
         # # Setup callback for Transaction
         self.actionTransfer.triggered.connect(self.openTransfer)
-        # self.actionDeposit.triggered.connect(self.openDeposit)
-        # self.actionWithdraw.triggered.connect(self.openWithdraw)
+        self.actionDeposit.triggered.connect(self.openDeposit)
+        self.actionWithdraw.triggered.connect(self.openWithdrawal)
         
         # Setup callback for all Reports
         self.actionRecurring_Deposit.triggered.connect(self.openRecurring_Deposit)
@@ -61,7 +66,14 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.windown_newLoan = NewLoanForm()
 
     def openAdd_New(self,*args):
+        print(self)
         self.window_addNewMember = AddNewMemberForm()
+
+    def openDeposit(self,*args):
+        self.window_deposit = DepositForm()
+
+    def openWithdrawal(self,*args):
+        self.window_withdrawal = WithdrawalForm()
 
     def openFind(self,*args):
         print('Open find window')
@@ -91,15 +103,19 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.close()
         
     #confirmation for close mainWindow
+
     def closeEvent(self, event):
         
-        reply = QMessageBox.question(self, 'Message',
-            "Are you sure to quit?", QMessageBox.Yes | 
-            QMessageBox.No, QMessageBox.No)
+        reply = QtWidgets.QMessageBox.question(self, 'Message',
+            "Are you sure to quit?", QtWidgets.QMessageBox.Yes | 
+            QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)
 
-        if reply == QMessageBox.Yes:
+        if reply == QtWidgets.QMessageBox.Yes:
             event.accept()
             self.close()
         else:
             event.ignore()   
+
+    def loadDatabase():
+        pass
 

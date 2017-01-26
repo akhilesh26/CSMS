@@ -18,6 +18,8 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.uploadSignPushButton.clicked.connect(self.uploadSign)
         self.member = Member()
    
+    def cancel(self):
+        self.close()
 
     def update(self):
         print("update button clicked")
@@ -70,7 +72,6 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
             
     def setValues():
         pass
-
 
     def uploadPhoto(self):
         self.fileName=QtWidgets.QFileDialog.getOpenFileName(self,'Open File','.')[0]

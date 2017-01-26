@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>827</width>
-    <height>567</height>
+    <width>648</width>
+    <height>570</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,9 +29,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
-        <width>789</width>
-        <height>818</height>
+        <y>-264</y>
+        <width>614</width>
+        <height>814</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -199,14 +199,68 @@ margin-left: 0px;
          <item row="14" column="1">
           <widget class="QLineEdit" name="officeLineEdit"/>
          </item>
-         <item row="22" column="0">
+         <item row="15" column="0">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Type of Id Proof:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="15" column="1">
+          <widget class="QComboBox" name="comboBox">
+           <property name="editable">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Aadhar Card</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Driving License</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PAN Card</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Voter Id</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ration Card</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Passport</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="16" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Id number:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="1">
+          <widget class="QLineEdit" name="lineEdit"/>
+         </item>
+         <item row="17" column="0">
           <widget class="QLabel" name="label_16">
            <property name="text">
             <string>MEMBERSHIP TYPE:</string>
            </property>
           </widget>
          </item>
-         <item row="22" column="1">
+         <item row="17" column="1">
           <widget class="QComboBox" name="membershipTypeComboBox">
            <item>
             <property name="text">
@@ -220,54 +274,54 @@ margin-left: 0px;
            </item>
           </widget>
          </item>
-         <item row="23" column="0">
+         <item row="18" column="0">
           <widget class="QLabel" name="label_20">
            <property name="text">
             <string>MEMBERSHIP FEE:</string>
            </property>
           </widget>
          </item>
-         <item row="23" column="1">
+         <item row="18" column="1">
           <widget class="QLineEdit" name="membershipFeeLineEdit"/>
          </item>
-         <item row="24" column="0">
+         <item row="19" column="0">
           <widget class="QLabel" name="label_17">
            <property name="text">
             <string>NUMBER OF SHARE</string>
            </property>
           </widget>
          </item>
-         <item row="24" column="1">
+         <item row="19" column="1">
           <widget class="QLineEdit" name="numberOfShareLineEdit"/>
          </item>
-         <item row="25" column="0">
+         <item row="20" column="0">
           <widget class="QLabel" name="label_18">
            <property name="text">
             <string>CURRENT RATE OF SHARE</string>
            </property>
           </widget>
          </item>
-         <item row="25" column="1">
+         <item row="20" column="1">
           <widget class="QLineEdit" name="currentRateLineEdit"/>
          </item>
-         <item row="28" column="0">
+         <item row="21" column="0">
           <widget class="QLabel" name="label_19">
            <property name="text">
             <string>PAYBLE AMOUNT:</string>
            </property>
           </widget>
          </item>
-         <item row="28" column="1">
+         <item row="21" column="1">
           <widget class="QLineEdit" name="paybleAmountLineEdit"/>
          </item>
-         <item row="32" column="0">
+         <item row="22" column="0">
           <widget class="QLabel" name="label_21">
            <property name="text">
             <string>OPENING DATE:</string>
            </property>
           </widget>
          </item>
-         <item row="32" column="1">
+         <item row="22" column="1">
           <widget class="QDateEdit" name="openingDateEdit">
            <property name="calendarPopup">
             <bool>true</bool>

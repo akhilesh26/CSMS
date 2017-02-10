@@ -1,10 +1,18 @@
 from Pages.UI.findMemberUi import Ui_Form
+from Pages.Database.models import Member
+from Pages.Database.alchdb import db
 from PyQt5 import QtWidgets
 
 class FindMemberForm(QtWidgets.QWidget,Ui_Form):
     def __init__(self,parent = None):
         super().__init__(parent)
         self.setupUi(self)
+
+        for member in db.session.query(Member).order_by(Member.name.desc()):
+            item = QtWidgets.QListWidgetItem("Id: {}, Name: {}".format(member.id, member.name),\
+                    self.membersList, member.id)
+
+        self.membersList.itemDoubleClicked.connect(self.getUserInfo)
 
         # Get input values
         self.methodSelected = self.nameRadioButton.isEnabled()
@@ -14,6 +22,14 @@ class FindMemberForm(QtWidgets.QWidget,Ui_Form):
         self.phoneRadioButton.clicked.connect(self.membersList.clear)
         self.memberIdRadioButton.clicked.connect(self.membersList.clear)
         self.show()
+
+    def boom(self, par):
+        print(par.type())
+
+    def getUserInfo(self,item):
+        id = item.type()
+        member = db.session.query(Member).filter_by(id=id).first()
+        print(member)
 
     def getSearchResult(self,str):
         # choose from buttons

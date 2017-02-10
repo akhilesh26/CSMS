@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>648</width>
-    <height>570</height>
+    <width>587</width>
+    <height>617</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,9 +29,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-264</y>
-        <width>614</width>
-        <height>814</height>
+        <y>0</y>
+        <width>553</width>
+        <height>748</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -207,7 +207,7 @@ margin-left: 0px;
           </widget>
          </item>
          <item row="15" column="1">
-          <widget class="QComboBox" name="comboBox">
+          <widget class="QComboBox" name="idProofComboBox">
            <property name="editable">
             <bool>true</bool>
            </property>
@@ -251,7 +251,7 @@ margin-left: 0px;
           </widget>
          </item>
          <item row="16" column="1">
-          <widget class="QLineEdit" name="lineEdit"/>
+          <widget class="QLineEdit" name="IdNumberLineEdit"/>
          </item>
          <item row="17" column="0">
           <widget class="QLabel" name="label_16">

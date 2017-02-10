@@ -1,6 +1,8 @@
 class Member():
-    def __init__(self):
+    def __init__(self, name, age):
         self.attribute = {}
+        self.name = name
+        self.age = age
 
     def set(self,key,value):
         self.attribute[key] = value
@@ -15,5 +17,10 @@ class Member():
     def print(self):
         for k,v in self.attribute.items():
             print(k,v)
+
+    def save(self):
+        from database import Database
+        db.run_query('insert into member values ({},{},{},{},{},{},{}).format(self.name, self.age, self.fathername)'
+
 
 

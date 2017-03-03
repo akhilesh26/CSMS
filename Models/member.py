@@ -1,14 +1,9 @@
 from sqlalchemy import Column, Integer, String, Date
+from Models.database import db
+from Models.base import TableBase
 
-if __name__=='__main__':
-    from alchdb import db
-else:
-    from Pages.Database.alchdb import db
-
-
-
-class Member(db.Base):
-    __tablename__ = "member"
+class Member(db.Base, TableBase):
+    __tablename__ = "members"
     id = Column(Integer, primary_key=True)
     name = Column(String(50))
     father_name = Column(String(50))
@@ -36,6 +31,7 @@ class Member(db.Base):
 
     def __repr__(self):
         return '<Member: {}, {}>'.format(self.id, self.name)
+
 
 # Creates the table if doesn't already exists
 if __name__=="__main__":

@@ -5,8 +5,8 @@ from Pages.confirmDialog import ConfirmDialog
 # from Pages.Database.member import Member2
 # from Pages.Database.database import Database 
 # Utkarsh's member class
-from Pages.Database.models import Member
-from Pages.Database.alchdb import db
+from Models.member import Member
+# from Models.database import db
 
 class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
     def __init__(self,parent = None):
@@ -43,12 +43,17 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.member.pincode = self.pinCodeLineEdit.text()
 
         self.member.phone = self.mobileLineEdit.text()
-        self.member.photo_path = self.photoFileName
-        print(self.member.photo_path)
-        self.member.signature_image_path = self.signatureFileName
+        try:
+            self.member.photo_path = self.photoFileName
+        except:
+            self.member.photo_path = ""
+        try:
+            self.member.signature_image_path = self.signatureFileName
+        except:
+            self.member.signature_image_path = ""
         self.member.email = self.emailLineEdit.text()
-        self.member.idProof = self.idProofComboBox.currentText()
-        self.member.idNumber = self.IdNumberLineEdit.text()
+        self.member.id_proof = self.idProofComboBox.currentText()
+        self.member.id_number = self.IdNumberLineEdit.text()
         self.member.job = self.professionLineEdit.text()
         self.member.office = self.officeLineEdit.text()
 

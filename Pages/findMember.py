@@ -1,6 +1,7 @@
 from Pages.UI.findMemberUi import Ui_Form
-from Pages.Database.models import Member
-from Pages.Database.alchdb import db
+from Models.member import Member
+from Models.database import db
+from Pages.memberPage import MemberProfile
 from PyQt5 import QtWidgets
 
 class FindMemberForm(QtWidgets.QWidget,Ui_Form):
@@ -23,13 +24,11 @@ class FindMemberForm(QtWidgets.QWidget,Ui_Form):
         self.memberIdRadioButton.clicked.connect(self.membersList.clear)
         self.show()
 
-    def boom(self, par):
-        print(par.type())
-
     def getUserInfo(self,item):
         id = item.type()
         member = db.session.query(Member).filter_by(id=id).first()
         print(member)
+        self.memberProfilePage = MemberProfile(member)
 
     def getSearchResult(self,str):
         # choose from buttons

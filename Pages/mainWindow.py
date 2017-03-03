@@ -104,17 +104,18 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         
     #confirmation for close mainWindow
 
-    def closeEvent(self, event):
+    # CLOSE DIALOG: REINSTATE LATER
+    # def closeEvent(self, event):
         
-        reply = QtWidgets.QMessageBox.question(self, 'Message',
-            "Are you sure to quit?", QtWidgets.QMessageBox.Yes | 
-            QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)
+        # reply = QtWidgets.QMessageBox.question(self, 'Message',
+            # "Are you sure to quit?", QtWidgets.QMessageBox.Yes | 
+            # QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)
 
-        if reply == QtWidgets.QMessageBox.Yes:
-            event.accept()
-            self.close()
-        else:
-            event.ignore()   
+        # if reply == QtWidgets.QMessageBox.Yes:
+            # event.accept()
+            # self.close()
+        # else:
+            # event.ignore()   
 
     def loadDatabase():
         pass

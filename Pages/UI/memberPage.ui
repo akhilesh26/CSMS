@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>779</width>
-    <height>554</height>
+    <height>577</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,8 +41,26 @@
          </item>
          <item>
           <widget class="QLabel" name="label_photo">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: white;</string>
+           </property>
            <property name="text">
-            <string>Photo</string>
+            <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -74,8 +92,27 @@
          </item>
          <item>
           <widget class="QLabel" name="label_signature">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: white;
+</string>
+           </property>
            <property name="text">
-            <string>Signature</string>
+            <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -322,52 +359,80 @@
            </property>
           </widget>
          </item>
-         <item row="13" column="0">
+         <item row="15" column="0">
           <widget class="QLabel" name="label_membershipType">
            <property name="text">
             <string>MEMBERSHIP TYPE :</string>
            </property>
           </widget>
          </item>
-         <item row="13" column="1">
+         <item row="15" column="1">
           <widget class="QLabel" name="label_membershipTypeField">
            <property name="text">
             <string>TextLabel</string>
            </property>
           </widget>
          </item>
-         <item row="14" column="0">
+         <item row="16" column="0">
           <widget class="QLabel" name="label_shares">
            <property name="text">
             <string>SHARES :</string>
            </property>
           </widget>
          </item>
-         <item row="14" column="1">
+         <item row="16" column="1">
           <widget class="QLabel" name="label_sharesField">
            <property name="text">
             <string>TextLabel</string>
            </property>
           </widget>
          </item>
-         <item row="15" column="0">
+         <item row="17" column="0">
           <widget class="QLabel" name="label_openingDate">
            <property name="text">
             <string>OPENING DATE :</string>
            </property>
           </widget>
          </item>
-         <item row="15" column="1">
+         <item row="17" column="1">
           <widget class="QLabel" name="label_openingDateField">
            <property name="text">
             <string>TextLabel</string>
            </property>
           </widget>
          </item>
-         <item row="16" column="0">
+         <item row="18" column="0">
           <widget class="QPushButton" name="editButton">
            <property name="text">
             <string>Edit</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Type of Id Proof:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="1">
+          <widget class="QLabel" name="label_idProof">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="14" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Id Number:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="14" column="1">
+          <widget class="QLabel" name="label_idNumber">
+           <property name="text">
+            <string>TextLabel</string>
            </property>
           </widget>
          </item>

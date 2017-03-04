@@ -10,7 +10,7 @@ class FindMemberForm(QtWidgets.QWidget,Ui_Form):
         self.setupUi(self)
 
         for member in db.session.query(Member).order_by(Member.name.desc()):
-            item = QtWidgets.QListWidgetItem("Id: {}, Name: {}".format(member.id, member.name),\
+            item = QtWidgets.QListWidgetItem("Id: {} , Name: {}".format(member.id, member.name),\
                     self.membersList, member.id)
 
         self.membersList.itemDoubleClicked.connect(self.getUserInfo)
@@ -34,28 +34,43 @@ class FindMemberForm(QtWidgets.QWidget,Ui_Form):
         # choose from buttons
         if(self.nameRadioButton.isChecked()):
             #search by name and print list
-            updateByName()
+            self.updateByName()
         elif(self.phoneRadioButton.isChecked()):
             #search by name and print list
-            updateByPhone()
+            self.updateByPhone()
         elif(self.memberIdRadioButton.isChecked()):
             #search by name and print list
-            updateByMemberId()
+            self.updateByMemberId()
         else:
             pass
 
-        self.membersList.clear()
-        self.membersList.addItem(str)
+        #self.membersList.clear()
+        #self.membersList.addItem(str)
 
     def openMemberPage():
         pass
 
-    def updateByName():
-        pass
-    def updateByPhone():
-        pass
-    def updateBymemberId():
-        pass
+    def updateByName(self):
+        self.membersList.clear()
+        name = self.searchLineEdit.text()
+        print(name) 
+        for member in db.session.query(Member).filter(Member.name.like(name+"%")):
+            item = QtWidgets.QListWidgetItem("Id: {} , Name: {}".format(member.id, member.name),\
+                    self.membersList, member.id)
+    def updateByPhone(self):
+        self.membersList.clear()
+        phone = self.searchLineEdit.text()
+        print(phone) 
+        for member in db.session.query(Member).filter(Member.phone.like(phone+"%")):
+            item = QtWidgets.QListWidgetItem("Id: {} , Name: {}".format(member.id, member.name),\
+                    self.membersList, member.id)
+    def updateByMemberId(self):
+        self.membersList.clear()
+        id = self.searchLineEdit.text()
+        print(id)
+        for member in db.session.query(Member).filter_by(id=id):
+            item = QtWidgets.QListWidgetItem("Id: {} , Name: {}".format(member.id, member.name),\
+                    self.membersList, member.id)
         
 
 

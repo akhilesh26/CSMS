@@ -40,7 +40,7 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.member.block = self.blockLineEdit.text()
         self.member.district = self.districtLineEdit.text()
         self.member.state = self.stateLineEdit.text()
-        self.member.pincode = int(self.pinCodeLineEdit.text())
+        self.member.pincode = self.pinCodeLineEdit.text()
 
         self.member.phone = self.mobileLineEdit.text()
         try:

@@ -5,6 +5,7 @@ from Pages.newLoan import NewLoanForm
 from Pages.deposit import DepositForm
 from Pages.withdrawal import WithdrawalForm
 from Pages.newExpense import NewExpenseForm
+from Pages.viewExpense import ViewExpenseForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
@@ -52,7 +53,7 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # Setup callback for Expense
         self.actionNew_Expense.triggered.connect(self.openNew_Expense)
-        #self.actionView_Expense.triggered.connect(self.openView_Expense)
+        self.actionView_Expense.triggered.connect(self.openView_Expense)
 
         # # Setup callback for Backup
         # self.actionSync.triggered.connect(self.openSync)
@@ -101,6 +102,8 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def openNew_Expense(self, *args):
         self.window_newExpense = NewExpenseForm()
+    def openView_Expense(self, *args):
+        self.window_viewExpense = ViewExpenseForm()
 
     def exitsafely(self,*args):
         # implement a "are you sure dialog box" later

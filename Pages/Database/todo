@@ -1,0 +1,19 @@
+# database conections
+	new Loan
+	deposit
+	withdraw
+	transfer
+
+# New Tables
+	transactions
+	expense
+	
+# GUI
+	new expense
+	view expense
+
+#misc
+	new Account
+	
+	
+	

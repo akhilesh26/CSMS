@@ -4,11 +4,12 @@ from Pages.transfer import TransferForm
 from Pages.newLoan import NewLoanForm
 from Pages.deposit import DepositForm
 from Pages.withdrawal import WithdrawalForm
+from Pages.newExpense import NewExpenseForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
 from Pages.UI.addNewMemberUi import Ui_Form 
-from Pages.Database.database import Database
+#from Pages.Database.database import Database
 
 
 # main application window
@@ -49,9 +50,9 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionTerm_Deposit_Account.triggered.connect(self.openBalance_Sheet)
         self.actionMisc.triggered.connect(self.openBalance_Sheet)
 
-        # # Setup callback for Expense
-        # self.actionNew_Expense.triggered.connect(self.openNew_Expense)
-        # self.actionView_Expense.triggered.connect(self.openView_Expense)
+        # Setup callback for Expense
+        self.actionNew_Expense.triggered.connect(self.openNew_Expense)
+        #self.actionView_Expense.triggered.connect(self.openView_Expense)
 
         # # Setup callback for Backup
         # self.actionSync.triggered.connect(self.openSync)
@@ -97,6 +98,9 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def openTransfer(self, *args):
         self.window_transfer = TransferForm()
+
+    def openNew_Expense(self, *args):
+        self.window_newExpense = NewExpenseForm()
 
     def exitsafely(self,*args):
         # implement a "are you sure dialog box" later

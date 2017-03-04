@@ -6,44 +6,155 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>462</width>
+    <height>313</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>New Expense</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout">
-   <item>
-    <layout class="QFormLayout" name="formLayout">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QFormLayout" name="formLayout_2">
+     <property name="fieldGrowthPolicy">
+      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+     </property>
+     <property name="formAlignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="verticalSpacing">
+      <number>20</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
      <item row="0" column="0">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="expenseIdLabel">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Expense Id</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="expenseIdLineEdit"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="expenditureTypeLabel">
+       <property name="text">
+        <string>Expenditure Type</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="expenditureTypeComboBox">
+       <item>
+        <property name="text">
+         <string>Furniture</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Stationary</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Computer</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Rent</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Employee Salary</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Rent</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Maintainance </string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Postage</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Audit</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Misc</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="expenditureCostLabel">
+       <property name="text">
+        <string>Expenditure Cost</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="expenditureCostLineEdit"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="paymentMethodLabel">
+       <property name="text">
+        <string>Payment Method</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="paymentMethodComboBox">
+       <item>
+        <property name="text">
+         <string>Cash</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Cheque</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="dateLabel">
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QDateEdit" name="dateDateEdit">
+       <property name="showGroupSeparator" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
     </layout>
    </item>
-   <item>
+   <item row="1" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="submitButton">
        <property name="text">
-        <string>Submit</string>
+        <string>Sumbit</string>
        </property>
       </widget>
      </item>

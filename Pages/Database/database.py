@@ -3,7 +3,7 @@ from sys import exit
 # from create_tables import member_create
 
 class Database():
-    def __init__(self,userName='root',password='karma'):
+    def __init__(self,userName='root',password='toor'):
         databaseName='csms'
         #super().__init__()
         self.userName = userName

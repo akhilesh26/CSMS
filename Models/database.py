@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, String
 
 class Database():
-    def __init__(self, username='root', password='karma'):
+    def __init__(self, username='root', password='toor'):
         self.engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'\
                 .format(username, password, "csms"), echo=True)
         self.Base = declarative_base()

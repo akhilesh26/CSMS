@@ -68,7 +68,7 @@ class FindMemberForm(QtWidgets.QWidget,Ui_Form):
         self.membersList.clear()
         id = self.searchLineEdit.text()
         print(id)
-        for member in db.session.query(Member).filter_by(id=id):
+        for member in db.session.query(Member).filter(Member.id.like(id+"%")):
             item = QtWidgets.QListWidgetItem("Id: {} , Name: {}".format(member.id, member.name),\
                     self.membersList, member.id)
         

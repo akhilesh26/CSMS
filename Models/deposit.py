@@ -1,9 +1,9 @@
-from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy import Column, Integer, String, Date, ForeignKey
 from Models.database import db
 from Models.base import TableBase
 
 class Deposit(db.Base, TableBase):
-    __tablename__='withdrawal'
+    __tablename__='deposit'
     transaction_no= Column(Integer,primary_key = True)
     account_no = Column(Integer,ForeignKey('members.id'))
     member_id=Column(Integer)

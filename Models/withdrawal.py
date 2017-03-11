@@ -1,11 +1,10 @@
-from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy import Column, Integer, String, Date, ForeignKey
 from Models.database import db
 from Models.base import TableBase
 
 class Withdrawal(db.Base, TableBase):
     __tablename__='withdrawal'
     transaction_no= Column(Integer,primary_key = True)
-   # account_no = Column(Integer,ForeignKey('members.id'))
     from_account=Column(Integer)
     to_account=Column(Integer)
     amount=Column(Integer)

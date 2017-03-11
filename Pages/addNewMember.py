@@ -1,6 +1,6 @@
 from Pages.UI.addNewMemberUi import Ui_Form 
 from PyQt5 import QtWidgets, QtGui, QtCore
-from Pages.confirmDialog import ConfirmDialog
+from Pages.createAccount import CreateAccount
 # Shikhar's member class
 # from Pages.Database.member import Member2
 # from Pages.Database.database import Database 

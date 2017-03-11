@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, Integer, String
 
 class Database():
-    def __init__(self, username='root', password='akhilesh26'):
+    def __init__(self, username='root', password='karma'):
         self.engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'\
                 .format(username, password, "csms"), echo=True)
         self.Base = declarative_base()
@@ -13,5 +13,8 @@ class Database():
 
     def createTable(self):
         self.Base.metadata.create_all(self.engine)
+
+    def dropTables(self):
+        self.Base.metadata.drop_all(self.engine)
 
 db = Database()

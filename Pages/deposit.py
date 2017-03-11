@@ -6,9 +6,9 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
 		super().__init__()
 		self.setupUi(self)
 		self.show()
-		self.depositPushButton.clicked.connect(self.dopositeMoney)
+		self.depositPushButton.clicked.connect(self.depositMoney)
         
-	def dopositeMoney(self):
+	def depositMoney(self):
 		memberId=self.memberIdLineEdit.text()
 		name=self.nameLineEdit.text()
 		accountType=self.accountTypeComboBox.currentText()

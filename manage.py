@@ -5,6 +5,8 @@ from Models.deposit import Deposit
 from Models.withdrawal import Withdrawal
 from Models.transfer import Transfer
 from Models.deposit import Deposit
+from Models.recurring import Recurring
+from Models.fixedDeposit import FixedDeposit
 from Models.database import db
 
 # Initialize tables

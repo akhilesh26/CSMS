@@ -17,4 +17,5 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
 		date=self.depositeDateEdit.text()
 		voucherNo=self.voucherNoLineEdit.text()
 		comment=self.commentLineEdit.text()
+
 		print(memberId,name,accountType,amount,paymentMode,date,voucherNo,comment)

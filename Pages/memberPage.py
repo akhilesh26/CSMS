@@ -36,7 +36,7 @@ class MemberProfile(QtWidgets.QWidget,Ui_memberPage):
         self.newAccountPushButton.clicked.connect(self.newAccountDialogOpen)
 
     def newAccountDialogOpen(self):
-        self.window_create_account = CreateAccountForm()
+        self.window_create_account = CreateAccountForm(self.member)
 
 
 

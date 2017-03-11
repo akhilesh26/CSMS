@@ -1,5 +1,5 @@
-from Models.member import Member
-from Models.loan import Loan
+jrom Models.member import Member
+trom Models.loan import Loan
 
 # Initialize tables
 Member.create_table()

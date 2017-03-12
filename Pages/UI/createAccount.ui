@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>521</width>
+    <width>537</width>
     <height>374</height>
    </rect>
   </property>
@@ -32,7 +32,11 @@ padding:3px;
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="memberIdLineEdit"/>
+        <widget class="QLineEdit" name="memberIdLineEdit">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_3">
@@ -56,57 +60,57 @@ padding:3px;
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QComboBox" name="accountTypeComboBox">
-         <item>
-          <property name="text">
-           <string>Saving</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Recurrent</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>FIxed Deposit</string>
-          </property>
-         </item>
-        </widget>
+        <widget class="QComboBox" name="accountTypeComboBox"/>
        </item>
-       <item row="3" column="0">
+       <item row="6" column="0">
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>Account No</string>
+          <string>Account No:</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="accountNoLineEdit"/>
-       </item>
-       <item row="4" column="0">
+       <item row="7" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
           <string>Openning Date:</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QDateEdit" name="openningDateEdit">
-         <property name="calendarPopup">
-          <bool>true</bool>
-         </property>
-         <property name="timeSpec">
-          <enum>Qt::LocalTime</enum>
-         </property>
-         <property name="date">
-          <date>
-           <year>2017</year>
-           <month>1</month>
-           <day>1</day>
-          </date>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Term (in months): </string>
          </property>
         </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Amount:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Duration (in months):</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="termLineEdit"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="amountLineEdit"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="durationLineEdit"/>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="accountNoLineEdit"/>
+       </item>
+       <item row="7" column="1">
+        <widget class="QDateEdit" name="openningDateEdit"/>
        </item>
       </layout>
      </item>

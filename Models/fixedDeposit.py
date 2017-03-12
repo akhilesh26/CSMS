@@ -18,5 +18,10 @@ class FixedDeposit(db.Base, TableBase):
     account_status = Column(String(50))
     opening_Date = Column(Date)
 
+    def __init__(self, accountNo, member_i, date):
+        self.account_no = accountNo
+        self.member_id = member_id
+        self.opening_Date = date
+
     def __repr__(self):
         return '<FixedDeposit: {0}, account_no: {1}'.format(self.id, self.account_no)

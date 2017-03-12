@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_memberPage(object):
     def setupUi(self, memberPage):
         memberPage.setObjectName("memberPage")
-        memberPage.resize(597, 577)
+        memberPage.resize(512, 577)
         self.gridLayout = QtWidgets.QGridLayout(memberPage)
         self.gridLayout.setObjectName("gridLayout")
         self.tabWidget = QtWidgets.QTabWidget(memberPage)
@@ -188,7 +188,7 @@ class Ui_memberPage(object):
         self.accountsTab = QtWidgets.QWidget()
         self.accountsTab.setObjectName("accountsTab")
         self.newAccountPushButton = QtWidgets.QPushButton(self.accountsTab)
-        self.newAccountPushButton.setGeometry(QtCore.QRect(400, 420, 121, 22))
+        self.newAccountPushButton.setGeometry(QtCore.QRect(30, 400, 121, 22))
         self.newAccountPushButton.setObjectName("newAccountPushButton")
         self.accountsListView = QtWidgets.QListView(self.accountsTab)
         self.accountsListView.setGeometry(QtCore.QRect(30, 20, 491, 351))

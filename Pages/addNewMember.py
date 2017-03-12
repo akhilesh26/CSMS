@@ -39,8 +39,10 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.member.block = self.blockLineEdit.text()
         self.member.district = self.districtLineEdit.text()
         self.member.state = self.stateLineEdit.text()
-        self.member.pincode = int(self.pinCodeLineEdit.text())
-
+        try:
+            self.member.pincode = int(self.pinCodeLineEdit.text())
+        except:
+            self.member.pincode = 0
         self.member.phone = self.mobileLineEdit.text()
         try:
             self.member.photo_path = self.photoFileName

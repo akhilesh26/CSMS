@@ -1,5 +1,5 @@
 from Pages.UI.withdrawalUi import Ui_Form
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
 from Pages.validators import *
 
 class WithdrawalForm(Ui_Form,QtWidgets.QWidget):
@@ -8,6 +8,7 @@ class WithdrawalForm(Ui_Form,QtWidgets.QWidget):
         self.setupUi(self)
         self.show()
         self.withdrawalPushButton.clicked.connect(self.withdraw)
+        self.withdrawalDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
 
         # LINK ALL VALIDATORS
         self.validator = Validator([

@@ -8,7 +8,10 @@ class Deposit(db.Base, TableBase):
     account_no = Column(Integer,ForeignKey('members.id'))
     member_id=Column(Integer)
     amount=Column(Integer)
-    date=Column(Integer)
+    date=Column(Date)
+    account_type=Column(String(50))
+    payment_mode=Column(String(50))
+    voucher_no=Column(Integer)
     comment=Column(Integer)
 
     def __repr__(self):

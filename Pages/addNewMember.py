@@ -20,6 +20,7 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.uploadPhotoPushButton.clicked.connect(self.uploadPhoto)
         self.uploadSignPushButton.clicked.connect(self.uploadSign)
         self.member = Member()
+        self.openingDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
         # self.member2 = Member2()
    
     def cancel(self):

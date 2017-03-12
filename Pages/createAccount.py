@@ -1,10 +1,14 @@
 from Pages.UI.createAccountUi import Ui_Form
+
+from PyQt5 import QtWidgets, QtCore
+
 from Models.recurring import Recurring
 from Models.fixedDeposit import FixedDeposit
 from Models.saving import Saving
 from Models.database import db
 
 from PyQt5 import QtWidgets
+
 
 accountTypes = {
     0: 'Fixed Account',
@@ -22,6 +26,9 @@ class CreateAccountForm(Ui_Form,QtWidgets.QWidget):
         self.memberIdLineEdit.setText(str(self.member.id))
         self.nameLineEdit.setText(self.member.name)
         self.createAccountPushButton.clicked.connect(self.createAccount)
+
+        self.openningDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
+
         # Combo box stuffs
         self.accountTypeComboBox.clear()
         for item in accountTypes:
@@ -31,7 +38,9 @@ class CreateAccountForm(Ui_Form,QtWidgets.QWidget):
         # Trigger action for account Type
         self.accountTypeComboBox.activated.connect(self.createFieldGui)
 
+
     def createFieldGui(self, accountTypeIndex):
+
         # Fix account type
         if accountTypeIndex == 0:
             print(accountTypes[accountTypeIndex])

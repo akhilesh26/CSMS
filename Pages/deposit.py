@@ -14,11 +14,11 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
         ## Link all validators
         ## Write in the order it is in GUI
         self.validator = Validator([
-            NumberValidator(self.memberIdLineEdit),
+            Number(self.memberIdLineEdit),
             # NameWithSpaceValidator(self.nameLineEdit),
             # NameWithSpaceValidator(self.accountTypeComboBox),
-            MoneyValidator(self.amountLineEdit),
-            NumberValidator(self.voucherNoLineEdit) 
+            Money(self.amountLineEdit),
+            Number(self.voucherNoLineEdit) 
         ])
         
 
@@ -37,4 +37,3 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
         self.deposit.voucherNo=self.voucherNoLineEdit.text()
         self.deposit.comment=self.commentLineEdit.text()
 
-        print(memberId,name,accountType,amount,paymentMode,date,voucherNo,comment)

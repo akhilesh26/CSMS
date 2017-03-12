@@ -8,6 +8,7 @@ from Models.saving import Saving
 from Models.database import db
 
 from PyQt5 import QtWidgets
+from Pages.validators import Validator, Number, String, Money
 
 
 accountTypes = {
@@ -38,9 +39,19 @@ class CreateAccountForm(Ui_Form,QtWidgets.QWidget):
         # Trigger action for account Type
         self.accountTypeComboBox.activated.connect(self.createFieldGui)
 
+        # Validations
+        self.validator = Validator([
+            Number(self.memberIdLineEdit),
+            String(self.nameLineEdit),
+            Number(self.termLineEdit),
+            Money(self.amountLineEdit),
+            Number(self.durationLineEdit),
+            Number(self.rateLineEdit),
+        ])
+        
+
 
     def createFieldGui(self, accountTypeIndex):
-
         # Fix account type
         if accountTypeIndex == 0:
             print(accountTypes[accountTypeIndex])
@@ -51,9 +62,12 @@ class CreateAccountForm(Ui_Form,QtWidgets.QWidget):
             self.label_8.hide()
             self.amountLineEdit.show()
             self.amountLabel.show()
+            self.maturityAmount.show()
+
         # Sav account type
         if accountTypeIndex == 1:
             print(accountTypes[accountTypeIndex])
+        print('IS VALID ? ', self.validator.is_valid())
             self.termLineEdit.hide()
             self.termLabel.hide()
             self.durationLineEdit.hide()

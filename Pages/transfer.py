@@ -30,11 +30,11 @@ class TransferForm(QtWidgets.QWidget, Ui_fromBalanceLabel):
 
         # LINK ALL VALIDATORS
         self.validator = Validator([
-        NumberValidator(self.fromMemberLineEdit),
-        NumberValidator(self.toMemberLineEdit),
-        NameWithSpaceValidator(self.formNameLineEdit),
-        NameWithSpaceValidator(self.toNameLineEdit),
-        MoneyValidator(self.fromAmountLineEdit)
+            Number(self.fromMemberLineEdit),
+            Number(self.toMemberLineEdit),
+            String(self.formNameLineEdit),
+            String(self.toNameLineEdit),
+            Money(self.fromAmountLineEdit)
         ])
 
     def getvalues(self):
@@ -48,4 +48,3 @@ class TransferForm(QtWidgets.QWidget, Ui_fromBalanceLabel):
 
         print('IS VALID ? ', self.validator.is_valid())
         print(self.fromMember, self.fromName, self.fromAmount, self.date, self.fromBalance, self.toName, self.toAccountType)
-        self.close()

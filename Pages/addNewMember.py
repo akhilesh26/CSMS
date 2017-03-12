@@ -1,11 +1,13 @@
 from Pages.UI.addNewMemberUi import Ui_Form 
 from PyQt5 import QtWidgets, QtGui, QtCore
+from Pages.confirmDialog import ConfirmDialog
 # Shikhar's member class
 # from Pages.Database.member import Member2
 # from Pages.Database.database import Database 
 # Utkarsh's member class
 from Models.member import Member
 from Models.database import db
+from Pages.validators import Validator, Pincode, MobileNo
 
 class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
     def __init__(self,parent = None):
@@ -22,6 +24,13 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.member = Member()
         self.openingDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
         # self.member2 = Member2()
+        
+        # Validation
+        print(self.pinCodeLineEdit)
+        self.validator = Validator([
+            Pincode(self.pinCodeLineEdit),
+            MobileNo(self.mobileLineEdit)
+        ])
    
     def cancel(self):
         self.close()
@@ -31,6 +40,7 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
 
     def addNew(self):
         print("add New button clicked")
+        print('Valid ? ', self.validator.is_valid())
         self.member.name  =  self.nameLineEdit.text()
         self.member.father_name = self.fatherLineEdit.text()
         self.member.dob = self.dobDateEdit.text()

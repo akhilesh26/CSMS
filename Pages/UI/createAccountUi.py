@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(537, 374)
+        Form.resize(537, 460)
         Form.setStyleSheet("margin:5px;\n"
 "padding:3px;\n"
 "\n"
@@ -33,6 +33,7 @@ class Ui_Form(object):
         self.label_3.setObjectName("label_3")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_3)
         self.nameLineEdit = QtWidgets.QLineEdit(Form)
+        self.nameLineEdit.setStyleSheet("")
         self.nameLineEdit.setReadOnly(True)
         self.nameLineEdit.setObjectName("nameLineEdit")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.nameLineEdit)
@@ -70,6 +71,7 @@ class Ui_Form(object):
         self.label_5.setObjectName("label_5")
         self.formLayout.setWidget(7, QtWidgets.QFormLayout.LabelRole, self.label_5)
         self.accountNoLineEdit = QtWidgets.QLineEdit(Form)
+        self.accountNoLineEdit.setReadOnly(False)
         self.accountNoLineEdit.setObjectName("accountNoLineEdit")
         self.formLayout.setWidget(7, QtWidgets.QFormLayout.FieldRole, self.accountNoLineEdit)
         self.label_7 = QtWidgets.QLabel(Form)
@@ -78,6 +80,20 @@ class Ui_Form(object):
         self.openningDateEdit = QtWidgets.QDateEdit(Form)
         self.openningDateEdit.setObjectName("openningDateEdit")
         self.formLayout.setWidget(8, QtWidgets.QFormLayout.FieldRole, self.openningDateEdit)
+        self.maturityAmountLineEdit = QtWidgets.QLineEdit(Form)
+        self.maturityAmountLineEdit.setReadOnly(True)
+        self.maturityAmountLineEdit.setObjectName("maturityAmountLineEdit")
+        self.formLayout.setWidget(9, QtWidgets.QFormLayout.FieldRole, self.maturityAmountLineEdit)
+        self.maturityAmountLabel = QtWidgets.QLabel(Form)
+        self.maturityAmountLabel.setObjectName("maturityAmountLabel")
+        self.formLayout.setWidget(9, QtWidgets.QFormLayout.LabelRole, self.maturityAmountLabel)
+        self.closingDateLabel = QtWidgets.QLabel(Form)
+        self.closingDateLabel.setObjectName("closingDateLabel")
+        self.formLayout.setWidget(10, QtWidgets.QFormLayout.LabelRole, self.closingDateLabel)
+        self.closingDateEdit = QtWidgets.QDateEdit(Form)
+        self.closingDateEdit.setReadOnly(True)
+        self.closingDateEdit.setObjectName("closingDateEdit")
+        self.formLayout.setWidget(10, QtWidgets.QFormLayout.FieldRole, self.closingDateEdit)
         self.horizontalLayout.addLayout(self.formLayout)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
@@ -105,7 +121,9 @@ class Ui_Form(object):
         self.label_8.setText(_translate("Form", "Duration (in months):"))
         self.rateLabel.setText(_translate("Form", "Rate (in %):"))
         self.label_5.setText(_translate("Form", "Account No:"))
-        self.label_7.setText(_translate("Form", "Openning Date:"))
+        self.label_7.setText(_translate("Form", "Opening Date:"))
+        self.maturityAmountLabel.setText(_translate("Form", "Maturity Amount:"))
+        self.closingDateLabel.setText(_translate("Form", "Closing Date:"))
         self.createAccountPushButton.setText(_translate("Form", "Submit"))
 
 

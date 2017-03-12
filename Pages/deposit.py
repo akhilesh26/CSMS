@@ -11,16 +11,22 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
         self.depositPushButton.clicked.connect(self.depositMoney)
 
         ## Link all validators
-        NumberValidator(self.memberIdLineEdit)
-        NameWithSpaceValidator(self.nameLineEdit)
-        NameWithSpaceValidator(self.accountTypeComboBox)
-        MoneyValidator(self.amountLineEdit)
-        NameWithSpaceValidator(self.paymentModeComboBox)
-        NumberValidator(self.voucherNoLineEdit)
+        ## Write in the order it is in GUI
+        self.validator = Validator([
+            NumberValidator(self.memberIdLineEdit),
+            # NameWithSpaceValidator(self.nameLineEdit),
+            # NameWithSpaceValidator(self.accountTypeComboBox),
+            MoneyValidator(self.amountLineEdit),
+            NumberValidator(self.voucherNoLineEdit) 
+        ])
         
 
 
     def depositMoney(self):
+        valid = self.validator.is_valid()
+        print('IS VALID ? ', valid)
+
+
         memberId=self.memberIdLineEdit.text()
         name=self.nameLineEdit.text()
         accountType=self.accountTypeComboBox.currentText()

@@ -10,10 +10,12 @@ class WithdrawalForm(Ui_Form,QtWidgets.QWidget):
         self.withdrawalPushButton.clicked.connect(self.withdraw)
 
         # LINK ALL VALIDATORS
-        NumberValidator(self.memberIdLineEdit)
-        NameWithSpaceValidator(self.nameLineEdit)
-        MoneyValidator(self.amountLineEdit)
-        NumberValidator(self.voucherNoLineEdit)
+        self.validator = Validator([
+            NumberValidator(self.memberIdLineEdit),
+            NameWithSpaceValidator(self.nameLineEdit),
+            MoneyValidator(self.amountLineEdit),
+            NumberValidator(self.voucherNoLineEdit)
+        ])
 
     def withdraw(self):
         memberId=self.memberIdLineEdit.text()
@@ -25,4 +27,5 @@ class WithdrawalForm(Ui_Form,QtWidgets.QWidget):
         date=self.withdrawalDateEdit.text()
         voucherNo=self.voucherNoLineEdit.text()
         comment=self.commentLineEdit.text()
+        print('IS VALID ? ', self.validator.is_valid())
         print(memberId,name,accountType,amount,paymentMode,currentBalance,date,voucherNo,comment)

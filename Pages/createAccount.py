@@ -67,26 +67,9 @@ class CreateAccountForm(Ui_Form,QtWidgets.QWidget):
         # memberId=self.memberIdLineEdit.text()
         # name=self.nameLineEdit.text()
         accountType=self.accountTypeComboBox.currentText()
-        accountNo = self.accountNoLineEdit.text()
-        date=self.openningDateEdit.text()
-        rate = self.rateLineEdit.text()
-        self.accountType.get(accountType)(accountNo, date, rate)
-        print(accountType, accountNo, date, rate)
+            
+        if accountType == accountTypes[0]:
+            self.fd = FixedDeposit()
+            self.fd.member = self.member
+            self.term = int(self.termLineEdit.text())
 
-    def createFixedAccount(self, accountNo, date, rate):
-        from Models.fixedDeposit import FixedDeposit
-        fd = FixedDeposit(accountNo, date)
-        db.session.add(fd)
-        db.session.commit()
-
-    def createSavingAccount(self, accountNo, date, rate):
-        from Models.saving import Saving 
-        sa = Saving(accountNo, date)
-        db.session.add(sa)
-        db.session.commit()
-
-    def createRecurringAccount(self, accountNo, date, rate):
-        from Models.recurring import Recurring 
-        ra = Recurring(accountNo, date)
-        db.session.add(ra)
-        db.session.commit() 

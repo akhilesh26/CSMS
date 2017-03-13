@@ -67,7 +67,7 @@ class CreateAccountForm(Ui_Form,QtWidgets.QWidget):
         # Sav account type
         if accountTypeIndex == 1:
             print(accountTypes[accountTypeIndex])
-        print('IS VALID ? ', self.validator.is_valid())
+            print('IS VALID ? ', self.validator.is_valid())
             self.termLineEdit.hide()
             self.termLabel.hide()
             self.durationLineEdit.hide()

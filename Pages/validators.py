@@ -41,6 +41,18 @@ class MyValidator(QValidator):
         self.color = WHITE
         self.state = 1
 
+class Required(MyValidator):
+    def validate(self, stri, pos):
+        self.state = 2
+        self.color = WHITE
+        if EMPTYSTR.match(stri):
+            self.state = 1
+            self.color = RED
+        setBackgroundColor(self.obj, self.color)
+        return (self.state, stri, pos)
+
+
+
 class Pincode(MyValidator):
     def validate(self, stri, pos):
         self.state = 2

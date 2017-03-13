@@ -7,6 +7,8 @@ from Pages.withdrawal import WithdrawalForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
+from Pages.fdAccountReport import FdAccountReport
+from Pages.rdAccountReport import RdAccountReport
 from Pages.UI.addNewMemberUi import Ui_Form 
 from Pages.Database.database import Database
 
@@ -37,8 +39,8 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionWithdraw.triggered.connect(self.openWithdrawal)
         
         # Setup callback for all Reports
-        self.actionRecurring_Deposit.triggered.connect(self.openRecurring_Deposit)
-        self.actionFixed_Deposit.triggered.connect(self.openBalance_Sheet)
+        self.actionRecurring_Deposit.triggered.connect(self.openRdAccountReport)
+        self.actionFixed_Deposit.triggered.connect(self.openFdAccountReport)
         self.actionSavings.triggered.connect(self.openSavings)
         self.actionAdvance.triggered.connect(self.openBalance_Sheet)
         self.actionOutstanding.triggered.connect(self.openBalance_Sheet)
@@ -89,11 +91,12 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.tabSavings.ui.setupUi(self.tabSavings)
         self.tabWidget.addTab(self.tabSavings,"Savings")
 
-    def openRecurring_Deposit(self,*args):
-        self.tabRecurring_Deposit = QtWidgets.QWidget()
-        self.tabRecurring_Deposit.ui = recurringdepositForm()
-        self.tabRecurring_Deposit.ui.setupUi(self.tabRecurring_Deposit)
-        self.tabWidget.addTab(self.tabRecurring_Deposit,"Recurring Deposit")
+    def openRdAccountReport(self,*args):
+        self.rdAccountReportTab=RdAccountReport()
+        self.tabWidget.addTab(self.rdAccountReportTab,"Recurring Deposit Accounts")
+    def openFdAccountReport(self,*args):
+        self.fdAccountReportTab=FdAccountReport()
+        self.tabWidget.addTab(self.fdAccountReportTab, "Fixed Deposit Accounts")
 
     def openTransfer(self, *args):
         self.window_transfer = TransferForm()

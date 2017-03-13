@@ -27,13 +27,13 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
     def depositMoney(self):
         valid = self.validator.is_valid()
         print('IS VALID ? ', valid)
-
-        self.deposit.memberId=self.memberIdLineEdit.text()
-        self.deposit.name=self.nameLineEdit.text()
-        self.deposit.accountType=self.accountTypeComboBox.currentText()
-        self.deposit.amount=self.amountLineEdit.text()
-        self.deposit.paymentMode=self.paymentModeComboBox.currentText()
-        self.deposit.date=self.depositeDateEdit.text()
-        self.deposit.voucherNo=self.voucherNoLineEdit.text()
-        self.deposit.comment=self.commentLineEdit.text()
+        if self.validator.is_valid():
+            self.deposit.memberId=self.memberIdLineEdit.text()
+            self.deposit.name=self.nameLineEdit.text()
+            self.deposit.accountType=self.accountTypeComboBox.currentText()
+            self.deposit.amount=self.amountLineEdit.text()
+            self.deposit.paymentMode=self.paymentModeComboBox.currentText()
+            self.deposit.date=self.depositeDateEdit.text()
+            self.deposit.voucherNo=self.voucherNoLineEdit.text()
+            self.deposit.comment=self.commentLineEdit.text()
 

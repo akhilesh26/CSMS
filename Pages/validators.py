@@ -51,8 +51,6 @@ class Required(MyValidator):
         setBackgroundColor(self.obj, self.color)
         return (self.state, stri, pos)
 
-
-
 class Pincode(MyValidator):
     def validate(self, stri, pos):
         self.state = 2
@@ -153,4 +151,8 @@ class Validator:
                 item.obj.setFocus()
                 # setBackgroundColor(item.obj,RED)
         return self.valid
+
+    def append(self, item):
+        self.arr.append(item)
+        
 

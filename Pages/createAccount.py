@@ -154,7 +154,7 @@ class CreateAccountForm(Ui_Form,QtWidgets.QWidget):
             self.close()
         # Recurring 
         if accountType == accountTypes[2]:
-            rd = FixedDeposit()
+            rd = Recurring()
             rd.member_id = self.member.id
             rd.account_no = self.accountNoLineEdit.text()
             rd.monthly_payment = self.amountLineEdit.text()

@@ -19,4 +19,4 @@ class Recurring(db.Base, TableBase):
     opening_Date = Column(Date)
 
     def __repr__(self):
-        return '<Recurring: {0}, account_no: {1}'.format(self.id, self.account_no)
+        return '<Recurring: {0}, account_no: {1}'.format(self.member_id, self.account_no)

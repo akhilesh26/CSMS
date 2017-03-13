@@ -10,7 +10,7 @@ from Models.fixedDeposit import FixedDeposit
 from Models.database import db
 
 # Initialize tables
-db.dropTables()
+#db.dropTables()
 Member.create_table()
 Loan.create_table()
 Saving.create_table()

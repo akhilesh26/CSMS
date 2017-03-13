@@ -12,4 +12,4 @@ class Withdrawal(db.Base, TableBase):
     comment=Column(Integer)
 
     def __repr__(self):
-        return '<Withdrawal: {0}, account_no: {1}'.format(self.id, self.account_no)
+        return '<Withdrawal: {0}, account_no: {1}'.format(self.transaction_no, self.account_no)

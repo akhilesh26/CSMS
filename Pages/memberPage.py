@@ -21,8 +21,8 @@ class MemberProfile(QtWidgets.QWidget,Ui_memberPage):
         self.label_pincodeField.setText(str(member.pincode))
         self.label_mobileField.setText(member.phone)
         try:
-            self.label_photoField.setPixmap(QtGui.QPixmap(member.photo_path))
-            self.label_signatureField.setPixmap(QtGui.QPixmap(member.signature_image_path))
+            self.label_photo.setPixmap(QtGui.QPixmap(member.photo_path))
+            self.label_signature.setPixmap(QtGui.QPixmap(member.signature_image_path))
         except:
             pass
         self.label_emailField.setText(member.email)

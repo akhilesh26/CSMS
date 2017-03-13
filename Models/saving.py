@@ -15,4 +15,4 @@ class Saving(db.Base, TableBase):
     opening_Date = Column(Date)
 
     def __repr__(self):
-        return '<Saving: {0}, account_no: {1}'.format(self.id, self.account_no)
+        return '<Saving: {0}, account_no: {1}'.format(self.member_id, self.account_no)

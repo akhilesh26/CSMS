@@ -9,6 +9,7 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
 		self.show()
 		self.depositPushButton.clicked.connect(self.depositMoney)
 		self.depositeDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
+
         
 	def depositMoney(self):
 		self.deposit.memberId=self.memberIdLineEdit.text()

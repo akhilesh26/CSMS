@@ -1,5 +1,10 @@
 from Pages.UI.withdrawalUi import Ui_Form
+<<<<<<< HEAD
 from PyQt5 import QtWidgets, QtCore
+=======
+from PyQt5 import QtWidgets
+from Pages.validators import *
+>>>>>>> 0e3c30eb6a9da14d7158c4514b03004b57dec3eb
 
 class WithdrawalForm(Ui_Form,QtWidgets.QWidget):
     def __init__(self):
@@ -8,6 +13,12 @@ class WithdrawalForm(Ui_Form,QtWidgets.QWidget):
         self.show()
         self.withdrawalPushButton.clicked.connect(self.withdraw)
         self.withdrawalDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
+
+        # LINK ALL VALIDATORS
+        NumberValidator(self.memberIdLineEdit)
+        NameWithSpaceValidator(self.nameLineEdit)
+        MoneyValidator(self.amountLineEdit)
+        NumberValidator(self.voucherNoLineEdit)
 
     def withdraw(self):
         memberId=self.memberIdLineEdit.text()

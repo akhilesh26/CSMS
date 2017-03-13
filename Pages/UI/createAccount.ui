@@ -62,29 +62,15 @@ padding:3px;
        <item row="2" column="1">
         <widget class="QComboBox" name="accountTypeComboBox"/>
        </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Account No:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Openning Date:</string>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="termLabel">
          <property name="text">
           <string>Term (in months): </string>
          </property>
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="amountLabel">
          <property name="text">
           <string>Amount:</string>
          </property>
@@ -106,10 +92,34 @@ padding:3px;
        <item row="5" column="1">
         <widget class="QLineEdit" name="durationLineEdit"/>
        </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="rateLabel">
+         <property name="text">
+          <string>Rate (in %):</string>
+         </property>
+        </widget>
+       </item>
        <item row="6" column="1">
-        <widget class="QLineEdit" name="accountNoLineEdit"/>
+        <widget class="QLineEdit" name="rateLineEdit"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Account No:</string>
+         </property>
+        </widget>
        </item>
        <item row="7" column="1">
+        <widget class="QLineEdit" name="accountNoLineEdit"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Openning Date:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
         <widget class="QDateEdit" name="openningDateEdit"/>
        </item>
       </layout>

@@ -1,6 +1,8 @@
 from Pages.UI.depositUi import Ui_Form
+from Pages.validators import *
 from PyQt5 import QtWidgets,QtCore
 from Models.deposit import Deposit
+
 class DepositForm(Ui_Form,QtWidgets.QWidget):
 	def __init__(self):
 		super().__init__()
@@ -21,4 +23,13 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
 		self.deposit.voucherNo=self.voucherNoLineEdit.text()
 		self.deposit.comment=self.commentLineEdit.text()
 
-		print(memberId,name,accountType,amount,paymentMode,date,voucherNo,comment)
+        ## Link all validators
+        NumberValidator(self.memberIdLineEdit)
+        NameWithSpaceValidator(self.nameLineEdit)
+        NameWithSpaceValidator(self.accountTypeComboBox)
+        MoneyValidator(self.amountLineEdit)
+        NameWithSpaceValidator(self.paymentModeComboBox)
+        NumberValidator(self.voucherNoLineEdit)
+
+
+        print(memberId,name,accountType,amount,paymentMode,date,voucherNo,comment)

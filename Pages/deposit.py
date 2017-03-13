@@ -1,5 +1,5 @@
 from Pages.UI.depositUi import Ui_Form
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets,QtCore
 
 class DepositForm(Ui_Form,QtWidgets.QWidget):
 	def __init__(self):
@@ -7,6 +7,7 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
 		self.setupUi(self)
 		self.show()
 		self.depositPushButton.clicked.connect(self.depositMoney)
+		self.depositeDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
         
 	def depositMoney(self):
 		memberId=self.memberIdLineEdit.text()

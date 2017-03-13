@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets, QtGui
+from PyQt5 import QtWidgets, QtGui,QtCore
 from Pages.UI.transferUi import Ui_fromBalanceLabel
 
 class TransferForm(QtWidgets.QWidget, Ui_fromBalanceLabel):
@@ -24,6 +24,7 @@ class TransferForm(QtWidgets.QWidget, Ui_fromBalanceLabel):
         # self.toAccountType
 
         self.submitPushButton.clicked.connect(self.getvalues)
+        self.dateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
 
     def getvalues(self):
         self.fromMember = self.fromMemberLineEdit.text()

@@ -1,5 +1,5 @@
 from Pages.UI.createAccountUi import Ui_Form
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
 
 class CreateAccountForm(Ui_Form,QtWidgets.QWidget):
     def __init__(self, member):
@@ -10,6 +10,7 @@ class CreateAccountForm(Ui_Form,QtWidgets.QWidget):
         self.memberIdLineEdit.setText(str(self.member.id))
         self.nameLineEdit.setText(self.member.name)
         self.createAccountPushButton.clicked.connect(self.createAccount)
+        self.openningDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
 
     def createAccount(self):
         # memberId=self.memberIdLineEdit.text()

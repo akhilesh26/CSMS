@@ -1,10 +1,6 @@
 from Pages.UI.withdrawalUi import Ui_Form
-<<<<<<< HEAD
 from PyQt5 import QtWidgets, QtCore
-=======
-from PyQt5 import QtWidgets
 from Pages.validators import *
->>>>>>> 0e3c30eb6a9da14d7158c4514b03004b57dec3eb
 
 class WithdrawalForm(Ui_Form,QtWidgets.QWidget):
     def __init__(self):

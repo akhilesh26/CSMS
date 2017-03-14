@@ -62,7 +62,7 @@ class DepositForm(Ui_Form,QtWidgets.QWidget):
 
             self.deposit.member_id=self.memberIdLineEdit.text()
             #self.deposit.name=self.nameLineEdit.text()
-            self.deposit.account_type="Saving" #self.accountTypeComboBox.currentText()
+            self.deposit.account_type=self.accountTypeComboBox.currentText()
             self.deposit.amount=self.amountLineEdit.text()
             self.deposit.payment_mode=self.paymentModeComboBox.currentText()
             self.deposit.date=self.depositeDateEdit.text()

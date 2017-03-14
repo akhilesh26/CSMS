@@ -40,6 +40,28 @@ class MyValidator(QValidator):
         self.obj.setValidator(self)
         self.color = WHITE
         self.state = 1
+class InRange(MyValidator):
+    def __init__(self,obj,min,max):
+        super().__init__(obj)
+        self.min=min
+        self.max=max
+    def validate(self, stri, pos):
+        self.state = 2
+        self.color = WHITE
+        if EMPTYSTR.match(stri):
+            self.state = 1
+            self.color = RED
+        elif not ALLINT.match(stri):
+            self.state = 1
+            self.color = RED
+        else:
+            val=float(stri)
+            if self.min>val or val>self.max:
+                self.state=1
+                self.color=RED
+        setBackgroundColor(self.obj, self.color)
+        return (self.state, stri, pos)
+
 
 class Required(MyValidator):
     def validate(self, stri, pos):
@@ -151,6 +173,7 @@ class Validator:
             if item.state != 2:
                 self.valid = False
                 item.obj.setFocus()
+                print(item)
                 # setBackgroundColor(item.obj,RED)
         return self.valid
 

@@ -71,7 +71,7 @@ class MemberProfile(QtWidgets.QWidget,Ui_memberPage):
                 db.session.commit()
                 # Closes this so I don't have to update everything
                 self.close()
-            self.rDeletePushButton.clicked.connect(deleteR)
+            self.rDushButton.clicked.connect(deleteR)
         s = db.session.query(Saving).filter_by(member_id=self.member.id).first()
         if s:
             s_view.show()

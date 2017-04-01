@@ -1,4 +1,5 @@
 from Pages.UI.memberPageUi import Ui_memberPage
+from Pages.createAccount import CreateAccountForm
 from PyQt5 import QtWidgets, QtGui
 
 
@@ -32,5 +33,10 @@ class MemberProfile(QtWidgets.QWidget,Ui_memberPage):
         self.label_membershipTypeField.setText(member.membership_type)
         self.label_sharesField.setText(str(member.no_of_share))
         # self.label_openingDateField = QtWidgets.QLabel(self.infoTab)
+        self.newAccountPushButton.clicked.connect(self.newAccountDialogOpen)
+
+    def newAccountDialogOpen(self):
+        self.window_create_account = CreateAccountForm(self.member)
+
 
 

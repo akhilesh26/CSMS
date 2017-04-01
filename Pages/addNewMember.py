@@ -1,6 +1,5 @@
 from Pages.UI.addNewMemberUi import Ui_Form 
 from PyQt5 import QtWidgets, QtGui, QtCore
-from Pages.confirmDialog import ConfirmDialog
 # Shikhar's member class
 # from Pages.Database.member import Member2
 # from Pages.Database.database import Database 
@@ -21,6 +20,7 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.uploadPhotoPushButton.clicked.connect(self.uploadPhoto)
         self.uploadSignPushButton.clicked.connect(self.uploadSign)
         self.member = Member()
+        self.openingDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
         # self.member2 = Member2()
    
     def cancel(self):
@@ -40,8 +40,10 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.member.block = self.blockLineEdit.text()
         self.member.district = self.districtLineEdit.text()
         self.member.state = self.stateLineEdit.text()
-        self.member.pincode = int(self.pinCodeLineEdit.text())
-
+        try:
+            self.member.pincode = int(self.pinCodeLineEdit.text())
+        except:
+            self.member.pincode = 0
         self.member.phone = self.mobileLineEdit.text()
         try:
             self.member.photo_path = self.photoFileName

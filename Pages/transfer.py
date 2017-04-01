@@ -1,5 +1,6 @@
-from PyQt5 import QtWidgets, QtGui
+from PyQt5 import QtWidgets, QtGui,QtCore
 from Pages.UI.transferUi import Ui_fromBalanceLabel
+from Pages.validators import *
 
 class TransferForm(QtWidgets.QWidget, Ui_fromBalanceLabel):
     def __init__(self):
@@ -24,6 +25,15 @@ class TransferForm(QtWidgets.QWidget, Ui_fromBalanceLabel):
         # self.toAccountType
 
         self.submitPushButton.clicked.connect(self.getvalues)
+        self.dateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
+
+
+        # LINK ALL VALIDATORS
+        NumberValidator(self.fromMemberLineEdit)
+        NumberValidator(self.toMemberLineEdit)
+        NameWithSpaceValidator(self.formNameLineEdit)
+        NameWithSpaceValidator(self.toNameLineEdit)
+        MoneyValidator(self.fromAmountLineEdit)
 
     def getvalues(self):
         self.fromMember = self.fromMemberLineEdit.text()

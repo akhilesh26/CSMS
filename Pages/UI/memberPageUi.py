@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'UI/memberPage.ui'
+# Form implementation generated from reading ui file 'Pages/UI/memberPage.ui'
 #
-# Created by: PyQt5 UI code generator 5.7.1
+# Created by: PyQt5 UI code generator 5.8
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_memberPage(object):
     def setupUi(self, memberPage):
         memberPage.setObjectName("memberPage")
-        memberPage.resize(779, 577)
+        memberPage.resize(512, 577)
         self.gridLayout = QtWidgets.QGridLayout(memberPage)
         self.gridLayout.setObjectName("gridLayout")
         self.tabWidget = QtWidgets.QTabWidget(memberPage)
@@ -185,13 +185,22 @@ class Ui_memberPage(object):
         self.loanTab = QtWidgets.QWidget()
         self.loanTab.setObjectName("loanTab")
         self.tabWidget.addTab(self.loanTab, "")
+        self.accountsTab = QtWidgets.QWidget()
+        self.accountsTab.setObjectName("accountsTab")
+        self.newAccountPushButton = QtWidgets.QPushButton(self.accountsTab)
+        self.newAccountPushButton.setGeometry(QtCore.QRect(30, 400, 121, 22))
+        self.newAccountPushButton.setObjectName("newAccountPushButton")
+        self.accountsListView = QtWidgets.QListView(self.accountsTab)
+        self.accountsListView.setGeometry(QtCore.QRect(30, 20, 491, 351))
+        self.accountsListView.setObjectName("accountsListView")
+        self.tabWidget.addTab(self.accountsTab, "")
         self.transactionTab = QtWidgets.QWidget()
         self.transactionTab.setObjectName("transactionTab")
         self.tabWidget.addTab(self.transactionTab, "")
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
 
         self.retranslateUi(memberPage)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(memberPage)
 
     def retranslateUi(self, memberPage):
@@ -236,6 +245,8 @@ class Ui_memberPage(object):
         self.label_idNumber.setText(_translate("memberPage", "TextLabel"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.infoTab), _translate("memberPage", "Info"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.loanTab), _translate("memberPage", "Loans"))
+        self.newAccountPushButton.setText(_translate("memberPage", "New Account"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.accountsTab), _translate("memberPage", "Accounts"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.transactionTab), _translate("memberPage", "Transactions"))
 
 

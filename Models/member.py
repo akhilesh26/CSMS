@@ -29,6 +29,12 @@ class Member(db.Base, TableBase):
     payable_amount = Column(Integer)
     opening_Date = Column(Date)
 
+    # Back refs
+    # fixedAccounts = relationship('FixedDeposit', backref='member', lazy='dynamic')
+    # savingAccounts = relationship('Saving', backref='member', lazy='dynamic')
+    # recurringAccounts = relationship('Recurring', backref='member', lazy='dynamic')
+    
+
     def __repr__(self):
         return '<Member: {}, {}>'.format(self.id, self.name)
 

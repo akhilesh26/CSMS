@@ -1,5 +1,5 @@
 from Pages.UI.newLoanUi import Ui_Form
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets,QtCore
 
 class NewLoanForm(QtWidgets.QWidget, Ui_Form):
     def __init__(self):
@@ -7,6 +7,7 @@ class NewLoanForm(QtWidgets.QWidget, Ui_Form):
         self.setupUi(self)
         self.show()
         self.submitPushButton.clicked.connect(self.getvalues)
+        self.dateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
 
     def getvalues(self):
         # Get values from form

@@ -12,7 +12,9 @@ class BalanceSheetForm(QtWidgets.QWidget,Ui_Form):
         self.setupUi(self)
         self.show()
         userName = 'root'
-        password = 'akhilesh26'
+
+        password = 'karma'
+
         databaseName = 'csms'
         db = QtSql.QSqlDatabase.addDatabase('QMYSQL')
         db.setUserName(userName)

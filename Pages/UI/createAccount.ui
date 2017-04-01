@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>537</width>
-    <height>374</height>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,6 +47,9 @@ padding:3px;
        </item>
        <item row="1" column="1">
         <widget class="QLineEdit" name="nameLineEdit">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="readOnly">
           <bool>true</bool>
          </property>
@@ -110,17 +113,49 @@ padding:3px;
         </widget>
        </item>
        <item row="7" column="1">
-        <widget class="QLineEdit" name="accountNoLineEdit"/>
+        <widget class="QLineEdit" name="accountNoLineEdit">
+         <property name="readOnly">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
        <item row="8" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>Openning Date:</string>
+          <string>Opening Date:</string>
          </property>
         </widget>
        </item>
        <item row="8" column="1">
         <widget class="QDateEdit" name="openningDateEdit"/>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLineEdit" name="maturityAmountLineEdit">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="maturityAmountLabel">
+         <property name="text">
+          <string>Maturity Amount:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="closingDateLabel">
+         <property name="text">
+          <string>Closing Date:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QDateEdit" name="closingDateEdit">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>

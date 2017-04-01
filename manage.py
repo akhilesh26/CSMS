@@ -12,7 +12,7 @@ from Models.database import db
 
 
 # Initialize tables
-db.dropTables()
+#db.dropTables()
 Member.create_table()
 Loan.create_table()
 Expense.create_table()

@@ -17,4 +17,5 @@ class Database():
     def dropTables(self):
         self.Base.metadata.drop_all(self.engine)
 
+
 db = Database()

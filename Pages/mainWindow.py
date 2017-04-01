@@ -9,8 +9,11 @@ from Pages.viewExpense import ViewExpenseForm
 from PyQt5 import QtWidgets
 from Pages.balanceSheet import BalanceSheetForm
 from Pages.findMember import FindMemberForm
+from Pages.fdAccountReport import FdAccountReport
+from Pages.rdAccountReport import RdAccountReport
 from Pages.UI.addNewMemberUi import Ui_Form 
 #from Pages.Database.database import Database
+from Pages.shareholdersReport import ShareholdersReport
 
 
 # main application window
@@ -39,15 +42,15 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionWithdraw.triggered.connect(self.openWithdrawal)
         
         # Setup callback for all Reports
-        self.actionRecurring_Deposit.triggered.connect(self.openRecurring_Deposit)
-        self.actionFixed_Deposit.triggered.connect(self.openBalance_Sheet)
+        self.actionRecurring_Deposit.triggered.connect(self.openRdAccountReport)
+        self.actionFixed_Deposit.triggered.connect(self.openFdAccountReport)
         self.actionSavings.triggered.connect(self.openSavings)
         self.actionAdvance.triggered.connect(self.openBalance_Sheet)
         self.actionOutstanding.triggered.connect(self.openBalance_Sheet)
         self.actionBalance_Sheet.triggered.connect(self.openBalance_Sheet)
         self.actionProfit_and_Loss.triggered.connect(self.openBalance_Sheet)
         self.actionReceipt_and_Disbursment.triggered.connect(self.openBalance_Sheet)
-        self.actionShareholders.triggered.connect(self.openBalance_Sheet)
+        self.actionShareholders.triggered.connect(self.openShareholdersReport)
         self.actionTerm_Deposit_Account.triggered.connect(self.openBalance_Sheet)
         self.actionMisc.triggered.connect(self.openBalance_Sheet)
 
@@ -91,11 +94,15 @@ class CSMSMain(QtWidgets.QMainWindow, Ui_MainWindow):
         self.tabSavings.ui.setupUi(self.tabSavings)
         self.tabWidget.addTab(self.tabSavings,"Savings")
 
-    def openRecurring_Deposit(self,*args):
-        self.tabRecurring_Deposit = QtWidgets.QWidget()
-        self.tabRecurring_Deposit.ui = recurringdepositForm()
-        self.tabRecurring_Deposit.ui.setupUi(self.tabRecurring_Deposit)
-        self.tabWidget.addTab(self.tabRecurring_Deposit,"Recurring Deposit")
+    def openRdAccountReport(self,*args):
+        self.rdAccountReportTab=RdAccountReport()
+        self.tabWidget.addTab(self.rdAccountReportTab,"Recurring Deposit Accounts")
+    def openFdAccountReport(self,*args):
+        self.fdAccountReportTab=FdAccountReport()
+        self.tabWidget.addTab(self.fdAccountReportTab, "Fixed Deposit Accounts")
+    def openShareholdersReport(self,*args):
+        self.shareholdersReportTab=ShareholdersReport();
+        self.tabWidget.addTab(self.shareholdersReportTab,"List of Shareholders")
 
     def openTransfer(self, *args):
         self.window_transfer = TransferForm()

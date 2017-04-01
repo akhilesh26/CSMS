@@ -1,11 +1,13 @@
 from Pages.UI.addNewMemberUi import Ui_Form 
 from PyQt5 import QtWidgets, QtGui, QtCore
+from Pages.confirmDialog import ConfirmDialog
 # Shikhar's member class
 # from Pages.Database.member import Member2
 # from Pages.Database.database import Database 
 # Utkarsh's member class
 from Models.member import Member
 from Models.database import db
+from Pages.validators import *
 
 class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
     def __init__(self,parent = None):
@@ -22,6 +24,26 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
         self.member = Member()
         self.openingDateEdit.setDateTime(QtCore.QDateTime.currentDateTime())
         # self.member2 = Member2()
+        
+        # Validation
+        print(self.pinCodeLineEdit)
+        self.validator = Validator([
+            String(self.nameLineEdit),
+            String(self.fatherLineEdit),
+            String(self.villageLineEdit),
+            String(self.blockLineEdit),
+            String(self.districtLineEdit),
+            String(self.stateLineEdit),
+            Pincode(self.pinCodeLineEdit),
+            MobileNo(self.mobileLineEdit),
+            Money(self.membershipFeeLineEdit),
+            Number(self.numberOfShareLineEdit),
+            Money(self.currentRateLineEdit),
+            Money(self.paybleAmountLineEdit),
+            Required(self.IdNumberLineEdit)
+
+
+        ])
    
     def cancel(self):
         self.close()
@@ -31,45 +53,46 @@ class AddNewMemberForm(Ui_Form, QtWidgets.QWidget):
 
     def addNew(self):
         print("add New button clicked")
-        self.member.name  =  self.nameLineEdit.text()
-        self.member.father_name = self.fatherLineEdit.text()
-        self.member.dob = self.dobDateEdit.text()
-        self.member.gender = self.genderComboBox.currentText()
+        print('Valid ? ', self.validator.is_valid())
+        if self.validator.is_valid():
+            self.member.name  =  self.nameLineEdit.text()
+            self.member.father_name = self.fatherLineEdit.text()
+            self.member.dob = self.dobDateEdit.text()
+            self.member.gender = self.genderComboBox.currentText()
 
-        self.member.village = self.villageLineEdit.text()
-        self.member.block = self.blockLineEdit.text()
-        self.member.district = self.districtLineEdit.text()
-        self.member.state = self.stateLineEdit.text()
-        try:
+            self.member.village = self.villageLineEdit.text()
+            self.member.block = self.blockLineEdit.text()
+            self.member.district = self.districtLineEdit.text()
+            self.member.state = self.stateLineEdit.text()
+
             self.member.pincode = int(self.pinCodeLineEdit.text())
-        except:
-            self.member.pincode = 0
-        self.member.phone = self.mobileLineEdit.text()
-        try:
-            self.member.photo_path = self.photoFileName
-        except:
-            self.member.photo_path = ""
-        try:
-            self.member.signature_image_path = self.signatureFileName
-        except:
-            self.member.signature_image_path = ""
-        self.member.email = self.emailLineEdit.text()
-        self.member.id_proof = self.idProofComboBox.currentText()
-        self.member.id_number = self.IdNumberLineEdit.text()
-        self.member.job = self.professionLineEdit.text()
-        self.member.office = self.officeLineEdit.text()
+            self.member.phone = self.mobileLineEdit.text()
+            try:
+                self.member.photo_path = self.photoFileName
+            except:
+                self.member.photo_path = ""
+            try:
+                self.member.signature_image_path = self.signatureFileName
+            except:
+                self.member.signature_image_path = ""
+            self.member.email = self.emailLineEdit.text()
+            self.member.id_proof = self.idProofComboBox.currentText()
+            self.member.id_number = self.IdNumberLineEdit.text()
+            self.member.job = self.professionLineEdit.text()
+            self.member.office = self.officeLineEdit.text()
 
-        self.member.membership_type = self.membershipTypeComboBox.currentText()
-        self.member.membership_fee = self.membershipFeeLineEdit.text()
-        self.member.no_of_share = self.numberOfShareLineEdit.text()
-        self.member.rate_at_the_time_of_buying = self.currentRateLineEdit.text()
-        self.member.payable_amount = self.paybleAmountLineEdit.text()
-        self.member.opening_Date = self.openingDateEdit.text()
+            self.member.membership_type = self.membershipTypeComboBox.currentText()
+            self.member.membership_fee = self.membershipFeeLineEdit.text()
+            self.member.no_of_share = self.numberOfShareLineEdit.text()
+            self.member.rate_at_the_time_of_buying = self.currentRateLineEdit.text()
+            self.member.payable_amount = self.paybleAmountLineEdit.text()
+            self.member.opening_Date = self.openingDateEdit.text()
 
-        self.dialog=ConfirmDialog()
-        self.dialog.accepted.connect(self.dialogAccept)
-        self.dialog.rejected.connect(self.ignore)
-        # now storing in member
+            self.dialog=ConfirmDialog()
+            self.dialog.accepted.connect(self.dialogAccept)
+            self.dialog.rejected.connect(self.ignore)
+
+            # now storing in member
         
 
     def dialogAccept(self):

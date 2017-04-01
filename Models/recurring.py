@@ -1,22 +1,22 @@
-from sqlalchemy import Column, Integer, String, Date, ForeignKey
+from sqlalchemy import Column, Integer, String, Date, ForeignKey, Float
 from Models.database import db
 from Models.base import TableBase
 
 class Recurring(db.Base, TableBase):
     __tablename__ = 'recurring'
     #id = Column(Integer, primary_key = True)
-    account_no = Column(Integer,primary_key = True)
+    account_no = Column(String(10), primary_key = True)
     member_id  = Column(Integer, ForeignKey('members.id'))
-    principal_amount = Column(Integer)
-    monthly_payment = Column(Integer)
-    interest_rate = Column(Integer)
+    monthly_payment = Column(Float)
+    interest_rate = Column(Float)
     # term in months
     term = Column(Integer)
-    current_balance = Column(Integer)
-    final_matured_amount = Column(Integer)
-    interest_accumulated = Column(Integer)
+    duration = Column(Integer)
+    current_balance = Column(Float)
+    final_matured_amount = Column(Float)
+    interest_accumulated = Column(Float)
     account_status = Column(String(50))
     opening_Date = Column(Date)
 
     def __repr__(self):
-        return '<Recurring: {0}, account_no: {1}'.format(self.id, self.account_no)
+        return '<Recurring: {0}, account_no: {1}'.format(self.member_id, self.account_no)

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>606</width>
-    <height>532</height>
+    <width>729</width>
+    <height>577</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@
    <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;List of Shareholders&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;List of Recurring Deposit Accounts&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -43,27 +43,30 @@
     <widget class="QTableWidget" name="tableWidget">
      <column>
       <property name="text">
-       <string>Member Id</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
        <string>Name</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Amount</string>
+       <string>Member Id</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Shares held</string>
+       <string>Account No</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Mobile No</string>
+       <string>Balance</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Membership Type </string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignLeading|AlignVCenter</set>
       </property>
      </column>
     </widget>

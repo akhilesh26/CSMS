@@ -6,14 +6,6 @@ from Pages.welcomeForm import CSMSWelcome
 
 
 if __name__=='__main__':
-    try:
-        from Models.database import db
-        from Models.member import Member
-        print(db.session.query(Member).all())
-    except Exception as e:
-        print(e)
-        print('Exitting safely')
-        sys.exit(3)
     # initialise the application
     app = QtWidgets.QApplication(sys.argv)
     # login screen

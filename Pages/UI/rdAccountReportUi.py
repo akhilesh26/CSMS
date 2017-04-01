@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'balanceSheet.ui'
+# Form implementation generated from reading ui file 'rdAccountReport.ui'
 #
 # Created by: PyQt5 UI code generator 5.5.1
 #
@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(606, 532)
+        Form.resize(729, 577)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.verticalLayout = QtWidgets.QVBoxLayout()
@@ -38,6 +38,7 @@ class Ui_Form(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignVCenter)
         self.tableWidget.setHorizontalHeaderItem(4, item)
         self.verticalLayout_2.addWidget(self.tableWidget)
 
@@ -49,17 +50,17 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">The Aadhaar Multipurpose (T&amp;C) Co-Operative Society Ltd.<br>\n"
 " Vill&amp;Po- Bharmar, Tehsil-Jawali, District-Kangra,H.P.</span></p></body></html>"))
-        self.label_2.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">List of Shareholders</span></p></body></html>"))
+        self.label_2.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">List of Recurring Deposit Accounts</span></p></body></html>"))
         item = self.tableWidget.horizontalHeaderItem(0)
-        item.setText(_translate("Form", "Member Id"))
-        item = self.tableWidget.horizontalHeaderItem(1)
         item.setText(_translate("Form", "Name"))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("Form", "Member Id"))
         item = self.tableWidget.horizontalHeaderItem(2)
-        item.setText(_translate("Form", "Amount"))
+        item.setText(_translate("Form", "Account No"))
         item = self.tableWidget.horizontalHeaderItem(3)
-        item.setText(_translate("Form", "Shares held"))
+        item.setText(_translate("Form", "Balance"))
         item = self.tableWidget.horizontalHeaderItem(4)
-        item.setText(_translate("Form", "Mobile No"))
+        item.setText(_translate("Form", "Membership Type "))
 
 
 if __name__ == "__main__":
